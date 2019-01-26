@@ -1,2 +1,2 @@
-# adilj13.github.io
-Personal website for open source projects
+# adilaziz.tk
+Personal Website

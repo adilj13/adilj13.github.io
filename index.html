@@ -1,116 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adil Aziz | Github</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-</head>
-<body>
-  <div class="row">
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//use.fontawesome.com/781f0a7550.js"></script>
+    <meta name="google-site-verification" content="8nREmAL4uVybmptKry6UIVEGLRt8GlrQ5yqm8oikMY0" />
+    <title>Adil Aziz | Software Engineer</title>
+    <meta name="description" content="Adil Aziz is Software Engineer from Okara who have worked from system administration to blockchain development.">
+    <meta name="keywords" content="adil aziz, adil aziz okara, software engineer okara, blockchain developer">
+    <link rel="stylesheet" href="css/flexboxgrid.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="heading center">Adil Aziz</div>
+          <br>
+          <p class="center"><a href="en">English</a> | <a href="ur">اردو</a></p>
+        </div>
+      </div>
+    </div>
 
-    <span class="col">
-        <img id="avatarURL" width="200">
-        <p><strong id="name"></strong></p>
-        <p id="bio"></p>
-        <p id="membersince"></p>
-        <p id="followerscount"></p>
-        <p id="followingcount"></p>
-        <p id="repocount"></p>
-    </span>
-
-    <span class="col">
-        <h1>Repositories</h1>
-        <span id="repos"></span>
-    </span>
-    <span class="col">
-        <h1 class="title">Starred</h1>
-        <span id="starred"></span>
-    </span>
-    <span class="col">
-        <h1 class="title">Activity</h1>
-        <span id="events"></span>
-    </span>
-    <span class="col">
-        <h1 class="title">Followers</h1>
-        <span id="followers"></span>
-    </span>
-    <span class="col">
-        <h1 class="title">Following</h1>
-        <span id="following"></span>
-    </span>
-  </div>
-  <script>
-      $(document).ready(function(){
-        $.get("https://api.github.com/users/adilj13", function(data, status){
-          $("#name").html(data.name);
-          $("#followerscount").html("<b>"+data.followers+"</b> followers");
-          $("#followingcount").html("<b>"+data.following+"</b> following");
-          $("#repocount").html("<b>"+data.public_repos+"</b> reps");
-          $("#bio").html(data.bio);
-          $("#avatarURL").attr("src",data.avatar_url);
-          $("#membersince").html("Last Activity: "+new Date(data.updated_at).toLocaleDateString());
-          if (data.hireable)
-            $("#hireable").html("Hireable");
-        });
-        $.get("https://api.github.com/users/adilj13/repos", function(data, status){
-          var str="";
-          for (var i = 0; i < data.length; i++) {
-            str=str+"<p><strong><a href='"+data[i].html_url+"'>"+data[i].name+"</a></strong><br>"+data[i].description+"<br><hr></p>";
-            //alert(data[i].name);
-          }
-          $("#repos").html(str);
-        });
-        $.get("https://api.github.com/users/adilj13/followers", function(data, status){
-          var str="";
-          for (var i = 0; i < data.length; i++) {
-            str=str+"<img src='"+data[i].avatar_url+"' width='100'><p><strong><a href='"+data[i].html_url+"'>"+data[i].login+"</a></strong></p>";
-            //str=str+"<div class='box'><article class='media'><div class='media-content'><div class='content'><p><strong><a href='"+data[i].html_url+"'>"+data[i].name+"</a></strong><br>"+data[i].description+"<br><hr>Last Activity: "+new Date(data[i].updated_at).toDateString()+"</p></div></div></article></div>";
-            //alert(data[i].name);
-          }
-          $("#followers").html(str);
-        });
-        $.get("https://api.github.com/users/adilj13/following", function(data, status){
-          var str="";
-          for (var i = 0; i < data.length; i++) {
-            str=str+"<img src='"+data[i].avatar_url+"' width='100'><p><strong><a href='"+data[i].html_url+"'>"+data[i].login+"</a></strong></p>";
-            //str=str+"<div class='box'><article class='media'><div class='media-content'><div class='content'><p><strong><a href='"+data[i].html_url+"'>"+data[i].name+"</a></strong><br>"+data[i].description+"<br><hr>Last Activity: "+new Date(data[i].updated_at).toDateString()+"</p></div></div></article></div>";
-            //alert(data[i].name);
-          }
-          $("#following").html(str);
-        });
-        $.get("https://api.github.com/users/adilj13/starred", function(data, status){
-          var str="";
-          for (var i = 0; i < data.length; i++) {
-            str=str+"<p><strong><a href='"+data[i].html_url+"'>"+data[i].full_name+"</a></strong><br>"+data[i].description+"<br><hr></p>";
-            //str=str+"<div class='box'><article class='media'><div class='media-content'><div class='content'><p><strong><a href='"+data[i].html_url+"'>"+data[i].name+"</a></strong><br>"+data[i].description+"<br><hr>Last Activity: "+new Date(data[i].updated_at).toDateString()+"</p></div></div></article></div>";
-            //alert(data[i].name);
-          }
-          $("#starred").html(str);
-        });
-        $.get("https://api.github.com/users/adilj13/events", function(data, status){
-          var str="";
-          for (var i = 0; i < data.length; i++) {
-            if (data[i].type=='PushEvent') {
-              var comits="";
-              for (var j = 0; j < data[i].payload.commits.length; j++)
-              {
-                comits=comits+data[i].payload.commits[j].message+"<br>";
-              }
-              str=str+"<p>pushed "+data[i].payload.commits.length+" commit(s) into <a href='https://github.com/"+data[i].repo.name+"'>"+data[i].repo.name+"</a> on "+new Date(data[i].created_at).toDateString()+"</p><hr>";
-            } else if(data[i].type=='CreateEvent') {
-              str=str+"<p>created <a href='https://github.com/"+data[i].repo.name+"'>"+data[i].repo.name+"</a> on "+new Date(data[i].created_at).toDateString()+"</p><hr>";
-              i++;
-            }else{
-              str=str+"";
-            }
-          }
-          $("#events").html(str);
-        });
-      });
-</script>
-</body>
+    <script src="js/app.js"></script>
+  </body>
 </html>

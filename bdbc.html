@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Birthday Budget Calculator</title>
+		<script type="text/javascript">
+		function calculate () {
+			var bdb=Math.floor((Math.random() * 2500) + 1000);
+			while (bdb>2500||bdb<1000) {bdb=Math.floor((Math.random() * 2500) + 1000);};
+			document.getElementById('bdBoy').value=bdb;
+			var eb=Math.floor((Math.random() * 500) + 200);
+			while(eb>500||eb<200){eb=Math.floor((Math.random() * 500) + 200);}
+			document.getElementById('elseBoys').value=eb;
+		}
+		</script>
+	</head>
+	<body>
+		Birthday Boys: <input type="text" id="bdBoy"><br>
+		Other Boys: <input type="text" id="elseBoys"><br>
+		<input type="submit" id="submit" onclick="calculate();">
+	</body>
+</html>
