@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <script src="https://use.fontawesome.com/781f0a7550.js"></script>
 
     <title>Check-Ins | Adil Aziz</title>
@@ -35,50 +37,59 @@
      <div class="grid-item" id="checkindetail"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
         <script>
-          var markers = [];
-          function initMap() {
-            //30.815456,73.468849
-            var center = {lat: 31.0848833, lng: 73.8278346};
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 9,
-              center: center,
-              disableDefaultUI: true,
-              zoomControl: true,
-            });
-            var checkins;
-            var list;
-            $.getJSON( "https://adilj13.github.io/data/checkins.json", function(data) {
-              checkins=data.checkins;
-              list="<h3>&nbsp;<a href='index.html'><i class='fa fa-home'></i> Home</a></h3><h2 class='smallheading'>Places</h2><ol>";
-              for (let index = 0; index < checkins.length; index++) {
-                var detail;
-                markers[index] = new google.maps.Marker({
-                  position: new google.maps.LatLng(checkins[index].lat,checkins[index].long),
-                  map: map
-                });
-                markers[index].addListener('click', function() {
-                  detail="<h2 class='smallheading'>"+checkins[index].place+", "+checkins[index].city+"</h2><hr>";
-                  for (let jndex = 0; jndex < checkins[index].iters.length; jndex++) {
-                    detail=detail+"<table><tr><th>Date:</th><td>"+checkins[index].iters[jndex].date+"</td></tr><tr><th>With:</th><td>"+checkins[index].iters[jndex].with+"</td></tr><tr><th>Review:</th><td>"+checkins[index].iters[jndex].review+"</td></tr></table><hr>";
-                  }
-                  map.setZoom(15);
-                  map.setCenter(markers[index].getPosition());
-                  $("#checkindetail").html(detail);
-                });
-                list=list+"<li><a href='#' onclick='clickMarker("+index+")'>"+checkins[index].place+"</a>, "+checkins[index].city+".</li>";
-              }
-              list=list+"</ol>";
-              $("#checkinlist").html(list);
-            });
+          // initialize Leaflet
+          var center = {lat: 31.0848833, lng: 73.8278346};
+          var map = L.map('map').setView(center, 9);
 
+          // add the OpenStreetMap tiles
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 16,
+            attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+          }).addTo(map);
+          var markers = [];
+          var checkins;
+          var list;
+          $.getJSON( "./data/checkins.json", function(data) {
+            checkins=data.checkins;
+            list="<h3>&nbsp;<a href='index.html'><i class='fa fa-home'></i> Home</a></h3><h2 class='smallheading'>Places</h2><ol>";
+            for (let index = 0; index < checkins.length; index++) {
+              var detail;//checkins[index].lat,checkins[index].long
+              markers[index] = L.marker({lat:checkins[index].lat,lng:checkins[index].long}).addTo(map);
+              markers[index].on('click', function() {
+                detail="<h2 class='smallheading'>"+checkins[index].place+", "+checkins[index].city+"</h2><hr>";
+                for (let jndex = 0; jndex < checkins[index].iters.length; jndex++) {
+                  detail=detail+"<table><tr><th>Date:</th><td>"+checkins[index].iters[jndex].date+"</td></tr><tr><th>With:</th><td>"+checkins[index].iters[jndex].with+"</td></tr><tr><th>Review:</th><td>"+checkins[index].iters[jndex].review+"</td></tr></table><hr>";
+                }
+                map.setView(markers[index].getLatLng(), 15);
+                $("#checkindetail").html(detail);
+              });
+              list=list+"<li><a href='#' onclick='clickMarker("+index+")'>"+checkins[index].place+"</a>, "+checkins[index].city+".</li>";
+            }
+            list=list+"</ol>";
+            $("#checkinlist").html(list);
+          });
+          function eventFire(el, etype){
+            console.log("add");
+            if (el.fireEvent) {
+              el.fireEvent(etype);
+            } else {
+              var evObj = document.createEvent('Events');
+              evObj.initEvent(etype, true, false);
+              el.dispatchEvent(evObj);
+            }
           }
           function clickMarker(index) {
-            google.maps.event.trigger(markers[index], 'click');
+            markers[index].fireEvent('click');
+            if (markers[index].fireEvent) {
+              markers[index].fireEvent('click');
+            } else {
+              var evObj = document.createEvent('Events');
+              evObj.initEvent('click', true, false);
+              markers[index].dispatchEvent(evObj);
+            }
           }
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHpPHPRBxe4MdJROWUZ97kuhRMxveDDX8&callback=initMap"></script>
 
     <script src="js/app.js"></script>
   </body>
