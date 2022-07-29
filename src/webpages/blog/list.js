@@ -1,5 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/navbar';
 const BlogList = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -24,13 +25,16 @@ const BlogList = () => {
         return <div>Loading...</div>;
     } else {
         return (
-            <ul>
-                {users.map(user => (
-                <li key={(user.slug).toString()}>
-                    <Link to={`${user.slug}`}>{user.title}</Link>
-                </li>
-                ))}
-            </ul>
+            <div>
+                <Navbar />
+                <ul>
+                    {users.map(user => (
+                    <li key={(user.slug).toString()}>
+                        <Link to={`${user.slug}`}>{user.title}</Link>
+                    </li>
+                    ))}
+                </ul>
+            </div>
         );
     }
 }

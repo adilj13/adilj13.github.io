@@ -1,5 +1,3 @@
-
-import './App.css';
 import Webpages from './webpages';
 
 function App() {
