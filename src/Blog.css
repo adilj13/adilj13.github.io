@@ -1,0 +1,14 @@
+.blogContent p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+}
+.blogContent h2{
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.blogContent a{
+  color: blue;
+}
