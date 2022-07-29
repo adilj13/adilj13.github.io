@@ -1,11 +1,10 @@
 
 import './App.css';
+import Webpages from './webpages';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold">
-      Welcome to Adil Aziz!
-    </h1>
+       <Webpages />
   );
 }
 
