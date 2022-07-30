@@ -26,9 +26,9 @@ const BlogList = () => {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
         return (
-            <div>
-                <Navbar />
-                <div className="columns-3">
+            <div className="bg-white border-gray-200 dark:bg-gray-900">
+                <Navbar selected="blog" />
+                <div className="columns-3 h-screen">
                     <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
                         <div className="animate-pulse flex space-x-4">
                             <div className="rounded-full bg-slate-700 h-10 w-10"></div>
@@ -80,24 +80,26 @@ const BlogList = () => {
         );
     } else {
         return (
-            <div>
-                <Navbar />
-                <div className='container mx-auto p-4 gap-8 columns-3' >
-                    {blogs.map(blog => (
-                    <div key={(blog.slug).toString()}>
-                        <Link to={`${blog.slug}`}>
-                            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                                <img className="w-full aspect-video" src={blog.featured_image} alt="Sunset in the mountains" />
-                                <div className="px-6 py-4">
-                                    <div className="font-bold text-xl mb-2">{parse(blog.title)}</div>
-                                    <div className="text-gray-700 text-base">
-                                        {parse(blog.excerpt)}
+            <div className='bg-white border-gray-200 dark:bg-gray-900 '>
+                <Navbar selected="blog"/>
+                <div className='container mx-auto p-4 h-screen'>
+                    <div className='columns-1 md:columns-3'>
+                        {blogs.map(blog => (
+                        <div key={(blog.slug).toString()}>
+                            <Link to={`${blog.slug}`}>
+                                <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                                    <img className="w-full aspect-video" src={ blog.featured_image } alt="" />
+                                    <div className="px-6 py-4">
+                                        <div className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{parse(blog.title)}</div>
+                                        <div className="text-base text-gray-700 dark:text-gray-400">
+                                            {parse(blog.excerpt)}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
+                        ))}
                     </div>
-                    ))}
                 </div>
                 <Footer />
             </div>
