@@ -34,7 +34,7 @@ function BlogDetails () {
         return (
             <div className="bg-white border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog"/>
-                <div className="sm:container sm:mx-auto p-4 max-w-xs grid grid-cols-4 h-screen" >
+                <div className="sm:container sm:mx-auto p-4 max-w-xs grid grid-cols-4 min-h-[100vh]" >
                     <div className="max-w-3xl w-full col-span-3">
                     <div role="status" className="max-w-sm animate-pulse">
                             <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-4"></div>
@@ -79,7 +79,7 @@ function BlogDetails () {
             
             <div className="bg-white border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog"/>
-                <div className="sm:container mx-auto p-4 max-w-md lg:grid lg:grid-cols-4 lg:gap-8 h-screen" >
+                <div className="sm:container mx-auto p-4 max-w-md lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]" >
                     <div className="lg:col-span-3">
                         <h4 className="mb-3 text-5xl font-semibold tracking-tight text-white">{parse(blog.title)}</h4>
                         <hr/>

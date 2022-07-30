@@ -28,7 +28,7 @@ const BlogList = () => {
         return (
             <div className="bg-white border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog" />
-                <div className="columns-3 h-screen">
+                <div className="columns-3 min-h-[100vh]">
                     <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
                         <div className="animate-pulse flex space-x-4">
                             <div className="rounded-full bg-slate-700 h-10 w-10"></div>
@@ -82,7 +82,7 @@ const BlogList = () => {
         return (
             <div className='bg-white border-gray-200 dark:bg-gray-900 '>
                 <Navbar selected="blog"/>
-                <div className='container mx-auto p-4 h-screen'>
+                <div className='container mx-auto p-4 min-h-[100vh]'>
                     <div className='columns-1 md:columns-3'>
                         {blogs.map(blog => (
                         <div key={(blog.slug).toString()}>
