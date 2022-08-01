@@ -9,7 +9,7 @@ const BlogList = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch("https://public-api.wordpress.com/rest/v1.1/sites/adilj13.wordpress.com/posts/")
+        fetch("https://public-api.wordpress.com/rest/v1.1/sites/adilj13.wordpress.com/posts/?order_by=date&order=DESC&fields=title,slug,excerpt,featured_image")
             .then(res => res.json())
             .then(
                 (data) => {
@@ -28,8 +28,23 @@ const BlogList = () => {
         return (
             <div className="bg-white border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog" />
-                <div className="columns-3 min-h-[100vh]">
+                <div className="columns-1 md:columns-3 min-h-[100vh]">
                     <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+                        <div className="animate-pulse flex space-x-4">
+                            <div className="rounded-full bg-slate-700 h-10 w-10"></div>
+                            <div className="flex-1 space-y-6 py-1">
+                                <div className="h-2 bg-slate-700 rounded"></div>
+                                <div className="space-y-3">
+                                    <div className="grid grid-cols-3 gap-4">
+                                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                                    </div>
+                                    <div className="h-2 bg-slate-700 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="border border-blue-300 shadow rounded-md p-4 m-4 max-w-sm w-full mx-auto">
                         <div className="animate-pulse flex space-x-4">
                             <div className="rounded-full bg-slate-700 h-10 w-10"></div>
                             <div className="flex-1 space-y-6 py-1">
@@ -44,22 +59,7 @@ const BlogList = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
-                        <div className="animate-pulse flex space-x-4">
-                            <div className="rounded-full bg-slate-700 h-10 w-10"></div>
-                            <div className="flex-1 space-y-6 py-1">
-                            <div className="h-2 bg-slate-700 rounded"></div>
-                            <div className="space-y-3">
-                                <div className="grid grid-cols-3 gap-4">
-                                <div className="h-2 bg-slate-700 rounded col-span-2"></div>
-                                <div className="h-2 bg-slate-700 rounded col-span-1"></div>
-                                </div>
-                                <div className="h-2 bg-slate-700 rounded"></div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+                    <div className="border border-blue-300 shadow rounded-md p-4 m-4 max-w-sm w-full mx-auto">
                         <div className="animate-pulse flex space-x-4">
                             <div className="rounded-full bg-slate-700 h-10 w-10"></div>
                             <div className="flex-1 space-y-6 py-1">

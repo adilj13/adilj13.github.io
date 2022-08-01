@@ -81,7 +81,7 @@ function BlogDetails () {
                 <Navbar selected="blog"/>
                 <div className="sm:container mx-auto p-4 max-w-md lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]" >
                     <div className="lg:col-span-3">
-                        <h4 className="mb-3 text-5xl font-semibold tracking-tight text-white">{parse(blog.title)}</h4>
+                        <h4 className="mb-3 text-5xl font-semibold tracking-tight text-black dark:text-white">{parse(blog.title)}</h4>
                         <hr/>
                         <div className="blogContent text-gray-700 dark:text-white">
                             {parse(blog.content)}
