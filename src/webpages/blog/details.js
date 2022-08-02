@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from 'react-router-dom'
 import Navbar from '../components/navbar';
 import Footer from "../components/footer";
@@ -77,8 +78,13 @@ function BlogDetails () {
 
         return (
             
+            
             <div className="bg-white border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog"/>
+                <Helmet>
+                    <title>{parse(blog.title)}</title>
+                    <meta name="description" content={parse(blog.title)} />
+                </Helmet>
                 <div className="sm:container mx-auto p-4 max-w-md lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]" >
                     <div className="lg:col-span-3">
                         <h4 className="mb-3 text-5xl font-semibold tracking-tight text-black dark:text-white">{parse(blog.title)}</h4>

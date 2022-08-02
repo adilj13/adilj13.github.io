@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 const About = () => {
-    
+    document.title="About";
         return (
             <div className="bg-white border-gray-200 dark:bg-gray-900">
             <Navbar selected="about"/>
@@ -23,6 +23,12 @@ const About = () => {
                         <li className='text-gray-700 dark:text-white'><b>Coding:</b> <a className='hover:bg-blue-500 hover:text-white dark:hover:text-gray-700 text-blue-500' href='https://code.visualstudio.com/' >Visual Studio Code</a></li>
                         <li className='text-gray-700 dark:text-white'><b>Operating System:</b> <a className='hover:bg-blue-500 hover:text-white dark:hover:text-gray-700 text-blue-500' href='https://ubuntu.com/' >Ubuntu</a></li>
                         <li className='text-gray-700 dark:text-white'><b>Music:</b> <a className='hover:bg-blue-500 hover:text-white dark:hover:text-gray-700 text-blue-500' href='https://spotify.com/' >Spotify</a></li>
+                    </ul>
+
+                    <h4 className='text-gray-700 dark:text-white text-3xl font-semibold my-4'>Hardware</h4>
+                    <ul className='list-disc list-inside'>
+                        <li className='text-gray-700 dark:text-white'><b>PC</b>: <a className='hover:bg-blue-500 hover:text-white dark:hover:text-gray-700 text-blue-500' href='https://www.apple.com/macbook-pro/'>HP Elitebook 840</a> and a <a className='hover:bg-blue-500 hover:text-white dark:hover:text-gray-700 text-blue-500' href='https://www.apple.com/iphone-11/'>iPhone 11</a>.</li>
+                        <li className='text-gray-700 dark:text-white'>I have a <a className='hover:bg-blue-500 hover:text-white dark:hover:text-gray-700 text-blue-500' href='https://www.apple.com/watch/'>Apple Watch</a> and a <a className='hover:bg-blue-500 hover:text-white dark:hover:text-gray-700 text-blue-500' href='https://www.apple.com/ipad/'>iPad</a>.</li>
                     </ul>
                 </div>
                 <div className="max-w-3xl w-full col-span-1">
