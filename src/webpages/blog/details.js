@@ -35,6 +35,10 @@ function BlogDetails () {
         return (
             <div className="bg-white border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog"/>
+                <Helmet>
+                    <title>{window.location.pathname.split('/')[2].replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</title>
+                    <meta name="description" content={window.location.pathname.split('/')[1]} />
+                </Helmet>
                 <div className="sm:container sm:mx-auto p-4 max-w-xs grid grid-cols-4 min-h-[100vh]" >
                     <div className="max-w-3xl w-full col-span-3">
                     <div role="status" className="max-w-sm animate-pulse">
