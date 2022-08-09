@@ -83,7 +83,7 @@ function BlogDetails () {
                 <Navbar selected="blog"/>
                 <Helmet>
                     <title>{parse(blog.title)}</title>
-                    <meta name="description" content={parse(blog.title)} />
+                    <meta name="description" content={parse(blog.excerpt)} />
                 </Helmet>
                 <div className="sm:container mx-auto p-4 max-w-md lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]" >
                     <div className="lg:col-span-3">
