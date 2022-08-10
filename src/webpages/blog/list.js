@@ -26,7 +26,7 @@ const BlogList = () => {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
         return (
-            <div className="bg-white border-gray-200 dark:bg-gray-900">
+            <div className="bg-slate-100 border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog" />
                 <div className="columns-1 md:columns-3 min-h-[100vh]">
                     <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
@@ -80,14 +80,14 @@ const BlogList = () => {
         );
     } else {
         return (
-            <div className='bg-white border-gray-200 dark:bg-gray-900 '>
+            <div className='bg-slate-100 border-gray-200 dark:bg-gray-900 '>
                 <Navbar selected="blog"/>
                 <div className='container mx-auto p-4 min-h-[100vh]'>
                     <div className='columns-1 md:columns-3'>
                         {blogs.map(blog => (
                         <div key={(blog.slug).toString()}>
                             <Link to={`${blog.slug}`}>
-                                <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                                <div className="max-w-sm rounded overflow-hidden shadow-lg bg-slate-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700 mb-4">
                                     <img className="w-full aspect-video" src={ blog.featured_image } alt="" />
                                     <div className="px-6 py-4">
                                         <div className="font-bold text-xl mb-2 text-gray-900 dark:text-white">{parse(blog.title)}</div>

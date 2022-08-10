@@ -33,12 +33,8 @@ function BlogDetails () {
     }
     if (!isLoaded) {
         return (
-            <div className="bg-white border-gray-200 dark:bg-gray-900">
+            <div className="bg-slate-100 border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog"/>
-                <Helmet>
-                    <title>{window.location.pathname.split('/')[2].replace(/-/g, ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</title>
-                    <meta name="description" content={window.location.pathname.split('/')[1]} />
-                </Helmet>
                 <div className="sm:container sm:mx-auto p-4 max-w-xs grid grid-cols-4 min-h-[100vh]" >
                     <div className="max-w-3xl w-full col-span-3">
                     <div role="status" className="max-w-sm animate-pulse">
@@ -83,7 +79,7 @@ function BlogDetails () {
         return (
             
             
-            <div className="bg-white border-gray-200 dark:bg-gray-900">
+            <div className="bg-slate-100 border-gray-200 dark:bg-gray-900">
                 <Navbar selected="blog"/>
                 <Helmet>
                     <title>{parse(blog.title)}</title>
@@ -101,7 +97,7 @@ function BlogDetails () {
                     </div>
                     <div className="lg:col-span-1">
                         <div className="my-4 bg-slate-300  dark:bg-slate-800 p-4 max-w-3xl rounded-xl w-full">
-                            <h4 className="mb-3 text-xl font-semibold tracking-tight text-white">ABOUT ME</h4>
+                            <h4 className="mb-3 text-xl font-semibold tracking-tight dark:text-white">ABOUT ME</h4>
 
                             <div className="text-gray-700 dark:text-white">
                                 <p className="mb-3">Hello and thanks for visiting! My name is Adil Aziz, and this is my website and digital garden. 🌱</p>
@@ -111,7 +107,7 @@ function BlogDetails () {
                             </div>
                         </div>
                         <div className="bg-slate-300  dark:bg-slate-800 p-4 max-w-3xl rounded-xl w-full">
-                            <h4 className="mb-3 text-xl font-semibold tracking-tight text-white">DETAILS</h4>
+                            <h4 className="mb-3 text-xl font-semibold tracking-tight dark:text-white">DETAILS</h4>
 
                             <div className="text-gray-700 dark:text-white">
                                 <p className="mb-3">Published: {Moment(blog.date).format('MMMM DD, yyyy')}</p>
