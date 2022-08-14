@@ -21,7 +21,7 @@ export default function Navbar(props) {
                     <div 
                     className={
                         "justify-between items-center w-full md:flex md:w-auto md:order-1" +
-                        (navbarOpen ? "" : " hidden")
+                        (!navbarOpen ? "" : " hidden")
                     }
                     id="navbar-cta">
                         <ul className={"flex flex-col p-4 mt-4 bg-slate-100 border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-slate-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"}>
