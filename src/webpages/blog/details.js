@@ -27,7 +27,7 @@ function BlogDetails () {
                     setError(error);
                 }
             )
-    }, [])
+    })
     if (error) {
         return <div>Error: {error.message}</div>;
     }

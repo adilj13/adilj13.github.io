@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My GitHub Profile</title>
+  </head>
+  <body>
+    <div id="profile"></div>
+    <div id="commits"></div>
+    <div id="contributed-repos"></div>
+    <div id="contributions"></div>
+    <script>
+      // Replace with your GitHub username
+      const username = "adilj13";
+
+      // Fetch user profile
+      fetch(`https://api.github.com/users/${username}`)
+        .then(response => response.json())
+        .then(data => {
+          const profile = document.getElementById("profile");
+          profile.innerHTML = `
+            <h2>${data.name}</h2>
+            <img src="${data.avatar_url}" alt="${data.name}'s avatar">
+            <p>Username: ${data.login}</p>
+            <p>Location: ${data.location}</p>
+            <p>Bio: ${data.bio}</p>
+            <p>Followers: ${data.followers}</p>
+            <p>Following: ${data.following}</p>
+            <p>Public Repos: ${data.public_repos}</p>
+          `;
+        });
+        
+      // Fetch recent commits
+      fetch(`https://api.github.com/users/${username}/events`)
+        .then(response => response.json())
+        .then(data => {
+          const commits = document.getElementById("commits");
+          let recentCommits = "";
+          data.forEach(event => {
+            if (event.type ==="PushEvent") {
+recentCommits += `<li> <a href="${event.repo.url}">${event.repo.name}</a> <p>${event.created_at}</p> <p>${event.payload.commits.length} commits</p> </li> `;
+}
+});
+commits.innerHTML = `<h2>Recent Commits</h2><ul>${recentCommits}</ul>`;
+});
+
+  // Fetch recent contributed repositories
+  fetch(`https://api.github.com/users/${username}/repos`)
+    .then(response => response.json())
+    .then(data => {
+      const contributedRepos = document.getElementById("contributed-repos");
+      let recentRepos = "";
+      data.forEach(repo => {
+        recentRepos += `
+          <li>
+            <a href="${repo.html_url}">${repo.name}</a>
+            <p>Created at: ${repo.created_at}</p>
+            <p>Last updated: ${repo.updated_at}</p>
+          </li>
+        `;
+      });
+      contributedRepos.innerHTML = `<h2>Recent Contributed Repositories</h2><ul>${recentRepos}</ul>`;
+    });
+
+  // Fetch contributions to external repositories
+  fetch(`https://api.github.com/users/${username}/events?per_page=1000`)
+    .then(response => response.json())
+    .then(data => {
+      const contributions = document.getElementById("contributions");
+      let externalRepos = "";
+      data.forEach(event => {
+        if (event.type === "PullRequestEvent" && event.actor.login === username) {
+          externalRepos += `
+            <li>
+                <a href="${event.payload.pull_request.html_url}">${event.repo.name}</a>
+<p>${event.created_at}</p>
+<p>${event.payload.pull_request.title}</p>
+</li>`; 
+} 
+}); 
+contributions.innerHTML = `<h2>External Repositories Contributions</h2><ul>${externalRepos}</ul>`;
+});
+</script>
+  </body>
+</html>
