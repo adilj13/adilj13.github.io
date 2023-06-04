@@ -11,6 +11,7 @@ import Home from './home';
 import BlogList from './blog/list';
 import BlogDetails from './blog/details';
 import About from './about';
+import Contact from './contact';
 
 const Webpages = () => {
     return(
@@ -20,6 +21,7 @@ const Webpages = () => {
                 <Route path = "/blog/" element = {<BlogList/>} />
                 <Route path = "/blog/:slug" element = {<BlogDetails/>} />
                 <Route path = "/about" element = {<About/>} />
+                <Route path = "/contact" element = {<Contact/>} />
             </Routes>
         </Router>
     );
