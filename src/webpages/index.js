@@ -10,7 +10,7 @@ import {
 import Home from './home';
 import BlogList from './blog/list';
 import BlogDetails from './blog/details';
-import About from './about';
+import Projects from './projects';
 import Contact from './contact';
 
 const Webpages = () => {
@@ -20,7 +20,7 @@ const Webpages = () => {
                 <Route exact path="/" element= {<Home/>} />
                 <Route path = "/blog/" element = {<BlogList/>} />
                 <Route path = "/blog/:slug" element = {<BlogDetails/>} />
-                <Route path = "/about" element = {<About/>} />
+                <Route path = "/projects" element = {<Projects/>} />
                 <Route path = "/contact" element = {<Contact/>} />
             </Routes>
         </Router>

@@ -8,7 +8,7 @@ export default function Footer() {
     </span>
     <ul className="flex flex-wrap items-center mt-3 text-sm  sm:mt-0">
         <li>
-            <Link to="/about" className="mr-4 hover:underline md:mr-6 dark:text-white">About</Link>
+            <Link to="/projects" className="mr-4 hover:underline md:mr-6 dark:text-white">Projects</Link>
         </li>
         <li>
             <Link to="/blog" className="mr-4 hover:underline md:mr-6 dark:text-white">Writings</Link>

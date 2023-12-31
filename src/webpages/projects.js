@@ -2,14 +2,14 @@ import React, { useState, useEffect }  from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-const About = () => {
-    document.title="About";
+const Projects = () => {
+    document.title="Projects";
         return (
             <div className="bg-slate-100 border-gray-200 dark:bg-gray-900">
-            <Navbar selected="about"/>
+            <Navbar selected="projects"/>
             <div className="sm:container sm:mx-auto p-4 max-w-md lg:grid lg:grid-cols-4 lg:gap-8 min-h-[100vh]" >
                 <div className="text-gray-700 dark:text-white max-w-3xl w-full col-span-3 text-lg">
-                    <h4 className="mb-3 text-5xl font-semibold">Contact Me</h4>
+                    <h4 className="mb-3 text-5xl font-semibold">Projects</h4>
                     <div className="my-4">
                         <p className='my-3'>Hey! I am Adil Aziz, and I'm working for Sufi Engineering.</p>
                         <p className='my-3'>I am a software engineer with a passion for building web applications.</p>
@@ -56,4 +56,4 @@ const About = () => {
         );
 }
 
-export default About;
+export default Projects;
