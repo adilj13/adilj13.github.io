@@ -14,9 +14,6 @@ export default function Footer() {
             <Link to="/blog" className="mr-4 hover:underline md:mr-6 dark:text-white">Writings</Link>
         </li>
         <li>
-            <Link to="#" className="mr-4 hover:underline md:mr-6 dark:text-white">Licensing</Link>
-        </li>
-        <li>
             <Link to="/contact" className="hover:underline dark:text-white">Contact</Link>
         </li>
     </ul>
