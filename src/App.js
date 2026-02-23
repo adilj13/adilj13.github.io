@@ -1,8 +1,11 @@
+import { ThemeProvider } from './context/ThemeContext';
 import Webpages from './webpages';
 
 function App() {
   return (
-       <Webpages />
+    <ThemeProvider>
+      <Webpages />
+    </ThemeProvider>
   );
 }
 

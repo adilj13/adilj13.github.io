@@ -1,46 +1,144 @@
-import {Link} from 'react-router-dom';
-import React, { useState }  from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
+import { useTheme } from '../../context/ThemeContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Navbar(props) {
-    const [navbarOpen, setNavbarOpen] = useState([]);
-    const selectd=props.selected;
-    return (
-        <>
-            <nav className="bg-slate-100 border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
-                <div className="container flex flex-wrap justify-between items-center mx-auto">
-                    <Link to="/" className="flex items-center">
-                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Adil Aziz</span>
-                    </Link>
-                    <div className="flex md:order-2">
-                        {/* <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button> */}
-                        <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false" onClick={() => setNavbarOpen(!navbarOpen)}>
-                            <span className="sr-only">Open main menu</span>
-                            <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-                        </button>
-                    </div>
-                    <div 
-                    className={
-                        "justify-between items-center w-full md:flex md:w-auto md:order-1" +
-                        (!navbarOpen ? "" : " hidden")
-                    }
-                    id="navbar-cta">
-                        <ul className={"flex flex-col p-4 mt-4 bg-slate-100 border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-slate-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"}>
-                        <li>
-                            <Link to="/" className={((selectd==='home')? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700")}>Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/projects" className={((selectd==='projects')? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700")}>Projects</Link>
-                        </li>
-                        <li>
-                            <Link to="/blog" className={((selectd==='blog')? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700")}>Blogs</Link>
-                        </li>
-                        <li>
-                            <Link to="/contact" className={((selectd==='contact')? "block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" : "block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700")}>Contact</Link>
-                        </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </>
-    );
+const navLinks = [
+  { to: '/', label: 'Home', key: 'home' },
+  { to: '/about', label: 'About', key: 'about' },
+  { to: '/projects', label: 'Projects', key: 'projects' },
+  { to: '/resume', label: 'Resume', key: 'resume' },
+  { to: '/uses', label: 'Uses', key: 'uses' },
+  { to: '/blog', label: 'Blog', key: 'blog' },
+  { to: '/contact', label: 'Contact', key: 'contact' },
+];
+
+export default function Navbar() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { darkMode, toggleDarkMode } = useTheme();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setNavbarOpen(false);
+  }, [location]);
+
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'glass shadow-lg shadow-gray-200/20 dark:shadow-gray-900/30'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/25 group-hover:shadow-primary-500/40 transition-shadow duration-300">
+              AA
+            </div>
+            <span className="text-lg font-bold text-gray-900 dark:text-white">
+              Adil<span className="text-primary-500">.</span>
+            </span>
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  isActive(to)
+                    ? 'text-primary-600 dark:text-primary-400'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800/50'
+                }`}
+              >
+                {label}
+                {isActive(to) && (
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute inset-0 bg-primary-50 dark:bg-primary-500/10 rounded-lg -z-10"
+                    transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
+                  />
+                )}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right side */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleDarkMode}
+              className="p-2.5 rounded-xl text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-all duration-200"
+              aria-label="Toggle dark mode"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={darkMode ? 'dark' : 'light'}
+                  initial={{ y: -10, opacity: 0, rotate: -90 }}
+                  animate={{ y: 0, opacity: 1, rotate: 0 }}
+                  exit={{ y: 10, opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {darkMode ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+                </motion.div>
+              </AnimatePresence>
+            </button>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              className="md:hidden p-2.5 rounded-xl text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
+              aria-label="Toggle menu"
+            >
+              {navbarOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {navbarOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden overflow-hidden glass border-t border-gray-200/50 dark:border-gray-800/50"
+          >
+            <div className="px-4 py-3 space-y-1">
+              {navLinks.map(({ to, label }) => (
+                <Link
+                  key={to}
+                  to={to}
+                  className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+                    isActive(to)
+                      ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800/50'
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
 }
