@@ -7,6 +7,7 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import ScrollToTop from '../components/ScrollToTop';
 import PageTransition from '../components/PageTransition';
+import SEO from '../../components/SEO';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -38,8 +39,6 @@ const BlogList = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [blogs, setBlogs] = useState([]);
 
-  document.title = 'Blog — Adil Aziz';
-
   useEffect(() => {
     fetch(
       'https://public-api.wordpress.com/rest/v1.1/sites/adilj13.wordpress.com/posts/?order_by=date&order=DESC&fields=title,slug,excerpt,featured_image'
@@ -59,6 +58,11 @@ const BlogList = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Blog — Adil Aziz"
+        description="Articles and thoughts by Adil Aziz on mechanical engineering, software development, CNC machining, open source, and technology."
+        path="/blog"
+      />
       <Navbar />
       <ScrollToTop />
       <PageTransition>

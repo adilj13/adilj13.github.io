@@ -7,6 +7,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
+import SEO from '../components/SEO';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -118,10 +119,13 @@ const certifications = [
 ];
 
 const Resume = () => {
-  document.title = 'Resume — Adil Aziz';
-
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Resume — Adil Aziz"
+        description="Resume of Adil Aziz — Techno-Industrialist. Experience in mechanical engineering management at Sufi Engineering, software consulting, CNC/CAD skills, and education from NUST and University of the Punjab."
+        path="/resume"
+      />
       <Navbar />
       <ScrollToTop />
       <PageTransition>

@@ -5,6 +5,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
+import SEO from '../components/SEO';
 
 const GITHUB_USERNAME = 'adilj13';
 const GITHUB_ORGS = ['PUCITHD', 'SufiEngineering'];
@@ -67,8 +68,6 @@ const SkeletonCard = () => (
 );
 
 const Projects = () => {
-  document.title = 'Projects — Adil Aziz';
-
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -195,6 +194,11 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Projects — Adil Aziz"
+        description="Open source projects and GitHub repositories by Adil Aziz. Software engineering work including web apps, tools, and contributions to PUCITHD and Sufi Engineering."
+        path="/projects"
+      />
       <Navbar />
       <ScrollToTop />
       <PageTransition>

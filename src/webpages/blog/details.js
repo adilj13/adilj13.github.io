@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiCalendar, FiClock, FiEdit3, FiArrowLeft, FiShare2 } from 'react-icons/fi';
@@ -10,6 +9,7 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import ScrollToTop from '../components/ScrollToTop';
 import PageTransition from '../components/PageTransition';
+import SEO from '../../components/SEO';
 
 const SkeletonDetail = () => (
   <div className="animate-pulse max-w-4xl mx-auto">
@@ -80,10 +80,18 @@ function BlogDetails() {
               <SkeletonDetail />
             ) : blog ? (
               <>
-                <Helmet>
-                  <title>{parse(blog.title)} — Adil Aziz</title>
-                  <meta name="description" content={blog.excerpt ? blog.excerpt.replace(/<[^>]+>/g, '').substring(0, 160) : ''} />
-                </Helmet>
+                <SEO
+                  title={`${blog.title.replace(/<[^>]+>/g, '')} — Adil Aziz`}
+                  description={blog.excerpt ? blog.excerpt.replace(/<[^>]+>/g, '').substring(0, 160) : ''}
+                  path={`/blog/${slug}`}
+                  type="article"
+                  image={blog.featured_image || 'https://github.com/adilj13.png'}
+                  article={{
+                    publishedTime: blog.date,
+                    modifiedTime: blog.modified,
+                    author: 'Adil Aziz',
+                  }}
+                />
 
                 <div className="grid lg:grid-cols-4 lg:gap-10">
                   {/* Main content */}

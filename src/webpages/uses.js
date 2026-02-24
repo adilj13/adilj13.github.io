@@ -7,6 +7,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
+import SEO from '../components/SEO';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -148,10 +149,13 @@ const categories = [
 ];
 
 const Uses = () => {
-  document.title = 'Uses — Adil Aziz';
-
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Uses — Adil Aziz"
+        description="Hardware, software, and engineering tools that Adil Aziz uses daily. SolidWorks, Aspire, CNC machines, VS Code, Docker, and more."
+        path="/uses"
+      />
       <Navbar />
       <ScrollToTop />
       <PageTransition>

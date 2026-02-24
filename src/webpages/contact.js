@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
+import SEO from '../components/SEO';
 
 const contactMethods = [
   {
@@ -78,7 +79,6 @@ const stagger = {
 };
 
 const Contact = () => {
-  document.title = 'Contact — Adil Aziz';
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -98,6 +98,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Contact — Adil Aziz"
+        description="Get in touch with Adil Aziz. Available for software engineering consulting, technical strategy, and collaborations. Reach out via X, GitHub, LinkedIn, or email."
+        path="/contact"
+      />
       <Navbar />
       <ScrollToTop />
       <PageTransition>

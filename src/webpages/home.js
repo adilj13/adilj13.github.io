@@ -9,6 +9,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
+import SEO from '../components/SEO';
 
 const socialLinks = [
   { href: 'https://github.com/adilj13', icon: FiGithub, label: 'GitHub' },
@@ -75,8 +76,6 @@ const stagger = {
 };
 
 const Home = () => {
-  document.title = 'Adil Aziz — Techno-Industrialist';
-
   const [avatarUrl, setAvatarUrl] = useState(null);
 
   useEffect(() => {
@@ -90,6 +89,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Adil Aziz — Techno-Industrialist"
+        description="Techno-Industrialist and Director at Sufi Engineering. Full-time mechanical engineering management with CNC, SolidWorks, DXF/G-Code. Part-time software engineering consultant."
+        path="/"
+      />
       <Navbar />
       <ScrollToTop />
       <PageTransition>

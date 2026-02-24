@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
+import SEO from '../components/SEO';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,7 +16,6 @@ const fadeUp = {
     transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' },
   }),
 };
-
 const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
@@ -64,10 +64,13 @@ const interests = [
 ];
 
 const About = () => {
-  document.title = 'About — Adil Aziz';
-
   return (
     <div className="min-h-screen">
+      <SEO
+        title="About — Adil Aziz"
+        description="Learn about Adil Aziz — Techno-Industrialist, Director at Sufi Engineering. Background in mechanical engineering management, software engineering, and research."
+        path="/about"
+      />
       <Navbar />
       <ScrollToTop />
       <PageTransition>
