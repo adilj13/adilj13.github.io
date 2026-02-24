@@ -127,8 +127,8 @@ const Contact = () => {
               </motion.h1>
 
               <motion.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Have a question or want to work together? I'd love to hear from you.
-                Feel free to reach out through any of the channels below.
+                Have a question or need a consultant? I'm available for software engineering consulting,
+                technical strategy, and interesting collaborations. Reach out through any channel below.
               </motion.p>
             </motion.div>
           </div>

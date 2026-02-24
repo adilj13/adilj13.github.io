@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiMapPin, FiBriefcase, FiAward, FiCode, FiCoffee, FiBookOpen, FiGlobe } from 'react-icons/fi';
+import { FiArrowRight, FiMapPin, FiBriefcase, FiAward, FiCode, FiCoffee, FiBookOpen, FiGlobe, FiSettings } from 'react-icons/fi';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -29,37 +29,38 @@ const stats = [
 
 const values = [
   {
-    title: 'Engineering Excellence',
-    description: 'I believe in writing clean, maintainable, and well-tested code. Quality is never an accident — it\'s always the result of intelligent effort.',
-    icon: FiCode,
+    title: 'Industrial Innovation',
+    description: 'Bridging the gap between traditional industry and modern technology. Applying engineering precision to manufacturing and rice processing.',
+    icon: FiSettings,
   },
   {
     title: 'Continuous Learning',
-    description: 'Technology evolves fast. I stay sharp by reading papers, experimenting with new tools, and contributing to the open source community.',
+    description: 'From SolidWorks to server management — I stay sharp by constantly expanding my toolkit across both mechanical and software domains.',
     icon: FiBookOpen,
   },
   {
     title: 'Impact-Driven Work',
-    description: 'Every line of code should serve a purpose. I focus on building solutions that solve real problems for real people.',
+    description: 'Every design and every line of code should serve a purpose. I focus on solutions that solve real problems in the real world.',
     icon: FiGlobe,
   },
   {
     title: 'Leadership',
-    description: 'Leading teams at Sufi Engineering taught me that great software is built by great teams. I value mentorship, clear communication, and ownership.',
+    description: 'Leading cross-functional teams at Sufi Engineering — from factory floor technicians to software developers. I value mentorship, clear communication, and ownership.',
     icon: FiAward,
   },
 ];
 
 const interests = [
-  'Full Stack Development',
-  'PHP & Laravel',
-  'Server Management & SSH',
-  'Open Source',
-  'Linux & Ubuntu',
-  'Cloud Infrastructure',
-  'DevOps & CI/CD',
+  'Mechanical Engineering',
+  'CNC & CAD/CAM',
+  'SolidWorks & Aspire',
+  'DXF & G-Code',
+  'Industrial Automation',
   'Rice Processing Technology',
-  'Software Architecture',
+  'Software Consulting',
+  'Server Management',
+  'Open Source',
+  'PHP & Laravel',
 ];
 
 const About = () => {
@@ -92,8 +93,8 @@ const About = () => {
                 About <span className="gradient-text">Me</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={2} className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mt-6 max-w-2xl">
-                I'm Adil Aziz — a software engineer, director at Sufi Engineering, and a lifelong builder.
-                I specialize in full-stack web development and have a background in software engineering research.
+                I'm Adil Aziz — a Techno-Industrialist, Director at Sufi Engineering, and a software engineering consultant.
+                I manage mechanical engineering operations full-time and do software development part-time.
               </motion.p>
             </motion.div>
           </div>
@@ -152,14 +153,15 @@ const About = () => {
                   </p>
                   <p>
                     Since 2020, I've been serving as <strong className="text-gray-900 dark:text-white">Director at Sufi Engineering</strong>,
-                    a ricetech company where I lead engineering operations and build digital solutions for the
-                    rice processing industry. It's a unique intersection of software and agriculture that
-                    keeps me challenged every day.
+                    a ricetech company where I lead mechanical engineering operations full-time. My day-to-day involves
+                    working with <strong className="text-gray-900 dark:text-white">DXF, G-Code, SolidWorks, and Aspire</strong> for
+                    CNC machining, plant design, and industrial automation. It's the unique intersection of
+                    technology and traditional industry that defines me as a Techno-Industrialist.
                   </p>
                   <p>
-                    Outside of work, I'm an active open source contributor, an avid reader of technical papers,
-                    and I enjoy writing about software engineering on my blog. I believe in building things
-                    that have real-world impact.
+                    I continue to do <strong className="text-gray-900 dark:text-white">software engineering part-time</strong> as a consultant,
+                    building web applications, managing servers, and contributing to open source. I'm also a published
+                    researcher and enjoy writing about engineering on my blog.
                   </p>
                 </motion.div>
               </div>
@@ -180,8 +182,8 @@ const About = () => {
                       <p className="text-sm text-gray-500 dark:text-gray-400">2020 — Present · Okara, Pakistan</p>
                     </div>
                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      Leading engineering operations at a ricetech company. Building digital infrastructure,
-                      managing teams, and driving technology adoption in rice processing.
+                      Full-time mechanical engineering management at a ricetech company. Working with CNC machines,
+                      SolidWorks, DXF/G-Code, and plant design. Part-time software engineering consultant.
                     </p>
                   </div>
                 </div>
@@ -298,10 +300,10 @@ const About = () => {
               className="space-y-6"
             >
               <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold">
-                Want to work <span className="gradient-text">together</span>?
+                Need a <span className="gradient-text">Consultant</span>?
               </motion.h2>
               <motion.p variants={fadeUp} className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto">
-                I'm always open to discussing new projects, opportunities, or collaborations.
+                I'm available for consulting in software engineering, server management, and technical strategy. Let's talk.
               </motion.p>
               <motion.div variants={fadeUp}>
                 <Link to="/contact" className="btn-primary">

@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiMonitor, FiCode, FiTerminal, FiTool, FiHeadphones, FiSmartphone } from 'react-icons/fi';
+import { FiMonitor, FiCode, FiTerminal, FiTool, FiHeadphones, FiSmartphone, FiSettings } from 'react-icons/fi';
 import { SiVscodium, SiUbuntu, SiSpotify, SiGooglechrome, SiFigma, SiNotion, SiSlack, SiGithub, SiDocker, SiPostman } from 'react-icons/si';
+import { FaCogs, FaDraftingCompass, FaCubes, FaIndustry } from 'react-icons/fa';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -21,6 +22,33 @@ const stagger = {
 };
 
 const categories = [
+  {
+    title: 'Engineering & CAD',
+    icon: FiSettings,
+    description: 'Mechanical engineering tools I use full-time',
+    items: [
+      {
+        name: 'SolidWorks',
+        detail: '3D CAD modeling for machine parts, assemblies, and plant layouts. Primary design tool for mechanical engineering work.',
+        icon: FaCogs,
+      },
+      {
+        name: 'Vectric Aspire',
+        detail: 'CNC routing and carving software. Used for toolpath generation, 3D relief modeling, and CNC job preparation.',
+        icon: FaCubes,
+      },
+      {
+        name: 'DXF / G-Code',
+        detail: 'Design exchange format files and G-Code programming for CNC machines. Daily workflow for machining operations.',
+        icon: FaDraftingCompass,
+      },
+      {
+        name: 'CNC Machines',
+        detail: 'Operating and programming CNC routers, lathes, and mills for precision manufacturing at the rice processing plant.',
+        icon: FaIndustry,
+      },
+    ],
+  },
   {
     title: 'Workstation',
     icon: FiMonitor,

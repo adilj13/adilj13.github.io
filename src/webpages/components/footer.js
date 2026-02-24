@@ -39,7 +39,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xs leading-relaxed">
-              Software engineer, open source enthusiast, and lifelong learner. Building things that matter.
+              Techno-Industrialist. Full-time mechanical engineering at Sufi Engineering. Part-time software consultant.
             </p>
           </div>
 

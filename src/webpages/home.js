@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { FiArrowRight, FiGithub, FiTwitter, FiLinkedin, FiDownload, FiBookOpen, FiInstagram } from 'react-icons/fi';
 import { SiReact, SiTailwindcss, SiPython, SiJavascript, SiPhp, SiDocker, SiGit, SiUbuntu } from 'react-icons/si';
-import { FaTiktok } from 'react-icons/fa';
+import { FaTiktok, FaCogs, FaDraftingCompass } from 'react-icons/fa';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -19,21 +19,26 @@ const socialLinks = [
 ];
 
 const skills = [
-  { name: 'React', icon: SiReact, color: 'text-cyan-500' },
-  { name: 'Tailwind', icon: SiTailwindcss, color: 'text-sky-500' },
-  { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-500' },
+  { name: 'SolidWorks', icon: FaCogs, color: 'text-red-500' },
+  { name: 'DXF / G-Code', icon: FaDraftingCompass, color: 'text-emerald-500' },
   { name: 'PHP', icon: SiPhp, color: 'text-indigo-400' },
+  { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-500' },
+  { name: 'React', icon: SiReact, color: 'text-cyan-500' },
   { name: 'Python', icon: SiPython, color: 'text-blue-500' },
   { name: 'Ubuntu', icon: SiUbuntu, color: 'text-orange-500' },
   { name: 'Docker', icon: SiDocker, color: 'text-blue-400' },
-  { name: 'Git', icon: SiGit, color: 'text-orange-600' },
 ];
 
 const timeline = [
   {
     year: '2020 — Present',
     title: 'Director — Sufi Engineering',
-    description: 'Leading a ricetech company focused on engineering solutions and innovation.',
+    description: 'Full-time role leading mechanical engineering operations at a ricetech company. Managing CNC machines, plant design, and industrial automation.',
+  },
+  {
+    year: 'Part-time',
+    title: 'Software Engineering Consultant',
+    description: 'Part-time software development and consulting. Building web applications, server management, and open source contributions.',
   },
   {
     year: 'Previously',
@@ -70,7 +75,18 @@ const stagger = {
 };
 
 const Home = () => {
-  document.title = 'Adil Aziz — Software Engineer & Developer';
+  document.title = 'Adil Aziz — Techno-Industrialist';
+
+  const [avatarUrl, setAvatarUrl] = useState(null);
+
+  useEffect(() => {
+    fetch('https://api.github.com/users/adilj13')
+      .then(res => res.json())
+      .then(data => {
+        if (data.avatar_url) setAvatarUrl(data.avatar_url);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -86,7 +102,7 @@ const Home = () => {
             <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl animate-float animate-delay-300" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary-500/5 to-transparent rounded-full" />
             {/* Grid pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(20,184,166,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(20,184,166,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(239,68,68,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(239,68,68,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
           </div>
 
           <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
@@ -100,8 +116,8 @@ const Home = () => {
               >
                 <motion.div variants={fadeUp} custom={0}>
                   <span className="tag">
-                    <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse" />
-                    Available for opportunities
+                    <span className="w-2 h-2 rounded-full bg-primary-500 mr-2 animate-pulse" />
+                    Open for Consulting
                   </span>
                 </motion.div>
 
@@ -117,13 +133,15 @@ const Home = () => {
                 <motion.div variants={fadeUp} custom={2} className="text-xl sm:text-2xl text-gray-500 dark:text-gray-400 font-medium h-10">
                   <TypeAnimation
                     sequence={[
-                      'Software Engineer',
+                      'Techno-Industrialist',
                       2000,
                       'Director @ Sufi Engineering',
                       2000,
-                      'Open Source Enthusiast',
+                      'Mechanical Engineering Manager',
                       2000,
-                      'Full Stack Developer',
+                      'Software Engineering Consultant',
+                      2000,
+                      'CNC & CAD Specialist',
                       2000,
                     ]}
                     wrapper="span"
@@ -137,12 +155,12 @@ const Home = () => {
                   custom={3}
                   className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-xl"
                 >
-                  Since 2020, I've been working at{' '}
+                  Techno-Industrialist and Director at{' '}
                   <a href="https://sufi.engineering" target="_blank" rel="noreferrer"
                     className="text-primary-500 hover:text-primary-600 font-medium underline underline-offset-4 decoration-primary-500/30 hover:decoration-primary-500 transition-colors">
                     Sufi Engineering
                   </a>
-                  , a ricetech company, as a Director. I build web applications, contribute to open source, and write about things that interest me.
+                  , a ricetech company. I manage mechanical engineering operations full-time — working with SolidWorks, DXF, G-Code, and CNC machines — while doing software engineering part-time as a consultant.
                 </motion.p>
 
                 <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-4">
@@ -178,20 +196,28 @@ const Home = () => {
                 className="hidden lg:flex justify-center"
               >
                 <div className="relative">
-                  <div className="w-80 h-80 rounded-3xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 dark:from-primary-500/10 dark:to-accent-500/10 flex items-center justify-center animate-float">
-                    <div className="w-72 h-72 rounded-2xl bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/40 dark:to-accent-900/40 flex items-center justify-center">
-                      <span className="text-8xl">👨‍💻</span>
+                  <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary-500/20 to-accent-500/20 dark:from-primary-500/10 dark:to-accent-500/10 flex items-center justify-center animate-float">
+                    <div className="w-72 h-72 rounded-full overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/40 dark:to-accent-900/40 flex items-center justify-center">
+                      {avatarUrl ? (
+                        <img
+                          src={avatarUrl}
+                          alt="Adil Aziz"
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-primary-200 to-accent-200 dark:from-primary-800/50 dark:to-accent-800/50 animate-pulse" />
+                      )}
                     </div>
                   </div>
                   {/* Floating badges */}
                   <div className="absolute -top-4 -right-4 glass-card px-4 py-2 animate-float animate-delay-100">
-                    <span className="text-sm font-medium">🎓 MS @ NUST</span>
+                    <span className="text-sm font-medium">� Industrialist</span>
                   </div>
                   <div className="absolute -bottom-4 -left-4 glass-card px-4 py-2 animate-float animate-delay-300">
-                    <span className="text-sm font-medium">🚀 Full Stack Dev</span>
+                    <span className="text-sm font-medium">⚙️ Mechanical Eng.</span>
                   </div>
                   <div className="absolute top-1/2 -right-8 glass-card px-4 py-2 animate-float animate-delay-200">
-                    <span className="text-sm font-medium">📖 Researcher</span>
+                    <span className="text-sm font-medium">� SW Consultant</span>
                   </div>
                 </div>
               </motion.div>
@@ -211,10 +237,10 @@ const Home = () => {
               className="text-center"
             >
               <motion.h2 variants={fadeUp} className="section-heading">
-                Tech <span className="gradient-text">Stack</span>
+                Tools & <span className="gradient-text">Technologies</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="section-subheading">
-                Technologies & tools I work with daily
+                Engineering & software tools I work with
               </motion.p>
             </motion.div>
 
@@ -334,7 +360,7 @@ const Home = () => {
                 Let's <span className="gradient-text">Connect</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto">
-                I'm always open to interesting conversations, collaborations, and new opportunities.
+                Open to consulting opportunities, technical collaborations, and interesting conversations.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
                 <Link to="/contact" className="btn-primary">

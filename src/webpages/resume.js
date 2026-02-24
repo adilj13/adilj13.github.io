@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiBriefcase, FiBookOpen, FiAward, FiCode, FiDownload, FiExternalLink } from 'react-icons/fi';
+import { FiBriefcase, FiBookOpen, FiAward, FiCode, FiDownload, FiExternalLink, FiSettings } from 'react-icons/fi';
 import { SiReact, SiTailwindcss, SiPython, SiJavascript, SiPhp, SiDocker, SiGit, SiPostgresql, SiLinux, SiMongodb, SiFirebase, SiAmazonwebservices, SiUbuntu, SiMysql, SiLaravel, SiNginx } from 'react-icons/si';
+import { FaCogs, FaDraftingCompass, FaCubes, FaIndustry } from 'react-icons/fa';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -22,16 +23,29 @@ const stagger = {
 
 const experience = [
   {
-    role: 'Director',
+    role: 'Director — Mechanical Engineering Management',
     company: 'Sufi Engineering',
     location: 'Okara, Pakistan',
-    period: '2020 — Present',
-    description: 'Leading engineering operations at a ricetech company focused on innovation in rice processing technology.',
+    period: '2020 — Present (Full-time)',
+    description: 'Leading mechanical engineering operations at a ricetech company focused on innovation in rice processing technology.',
     highlights: [
-      'Spearheading digital transformation across rice processing operations',
-      'Built internal tools and dashboards to monitor plant performance',
-      'Managing cross-functional teams of engineers and technicians',
-      'Driving adoption of modern software solutions in traditional industry',
+      'Managing CNC machining operations with DXF, G-Code, SolidWorks, and Aspire',
+      'Designing and optimizing rice processing plant layouts and machinery components',
+      'Leading cross-functional teams of mechanical engineers and factory floor technicians',
+      'Driving industrial automation and modernization of legacy manufacturing processes',
+    ],
+  },
+  {
+    role: 'Software Engineering Consultant',
+    company: 'Freelance / Part-time',
+    location: 'Remote',
+    period: 'Part-time',
+    description: 'Part-time software development and consulting for web applications, server infrastructure, and technical strategy.',
+    highlights: [
+      'Building and maintaining web applications with PHP, Laravel, and React',
+      'Server management, deployment automation, and infrastructure on Ubuntu/Linux',
+      'Technical consulting for businesses on software architecture and tooling',
+      'Contributing to open source projects and community',
     ],
   },
   {
@@ -68,26 +82,26 @@ const education = [
 
 const skillCategories = [
   {
-    title: 'Frontend',
+    title: 'Mechanical & CAD',
     skills: [
-      { name: 'React', icon: SiReact },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'Tailwind CSS', icon: SiTailwindcss },
+      { name: 'SolidWorks', icon: FaCogs },
+      { name: 'Aspire', icon: FaCubes },
+      { name: 'DXF / G-Code', icon: FaDraftingCompass },
+      { name: 'CNC Machining', icon: FaIndustry },
     ],
   },
   {
-    title: 'Backend',
+    title: 'Software (Part-time)',
     skills: [
       { name: 'PHP', icon: SiPhp },
       { name: 'Laravel', icon: SiLaravel },
+      { name: 'React', icon: SiReact },
+      { name: 'JavaScript', icon: SiJavascript },
       { name: 'Python', icon: SiPython },
-      { name: 'MySQL', icon: SiMysql },
-      { name: 'PostgreSQL', icon: SiPostgresql },
-      { name: 'MongoDB', icon: SiMongodb },
     ],
   },
   {
-    title: 'DevOps & Server Management',
+    title: 'DevOps & Server Mgmt',
     skills: [
       { name: 'Ubuntu', icon: SiUbuntu },
       { name: 'Linux', icon: SiLinux },
@@ -95,7 +109,6 @@ const skillCategories = [
       { name: 'Docker', icon: SiDocker },
       { name: 'Git', icon: SiGit },
       { name: 'AWS', icon: SiAmazonwebservices },
-      { name: 'Firebase', icon: SiFirebase },
     ],
   },
 ];
@@ -129,7 +142,7 @@ const Resume = () => {
                 My <span className="gradient-text">Resume</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={1} className="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl">
-                A summary of my professional experience, education, and technical skills.
+                Techno-Industrialist — mechanical engineering management (full-time) and software engineering consulting (part-time).
               </motion.p>
               <motion.div variants={fadeUp} custom={2} className="mt-6">
                 <a
@@ -245,9 +258,9 @@ const Resume = () => {
             >
               <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center">
-                  <FiCode className="w-5 h-5 text-primary-500" />
+                  <FiSettings className="w-5 h-5 text-primary-500" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Technical Skills</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Skills & Tools</h2>
               </motion.div>
 
               <div className="grid sm:grid-cols-3 gap-6">
