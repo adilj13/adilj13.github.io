@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiTwitter, FiMapPin, FiMail, FiSend, FiGithub, FiLinkedin, FiMessageSquare, FiInstagram } from 'react-icons/fi';
+import { FiTwitter, FiMapPin, FiMail, FiSend, FiGithub, FiLinkedin, FiMessageSquare, FiInstagram, FiUsers, FiCpu, FiMic, FiHeart } from 'react-icons/fi';
 import { FaTiktok } from 'react-icons/fa';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
@@ -172,6 +172,81 @@ const Contact = () => {
                       {method.linkLabel} →
                     </a>
                   )}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Ways to Collaborate */}
+        <section className="py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-50/20 dark:via-primary-950/10 to-transparent pointer-events-none" />
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              variants={stagger}
+              className="text-center mb-10"
+            >
+              <motion.h2 variants={fadeUp} className="section-heading">
+                Ways to <span className="gradient-text">Collaborate</span>
+              </motion.h2>
+              <motion.p variants={fadeUp} className="section-subheading">
+                I'm always open to meaningful collaborations — here's how we can work together
+              </motion.p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-50px' }}
+              variants={stagger}
+              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {[
+                {
+                  icon: FiUsers,
+                  title: 'Partnerships',
+                  description:
+                    'Joint ventures, technical partnerships, and long-term collaborations in software engineering or industrial technology.',
+                  color: 'from-red-500 to-rose-600',
+                },
+                {
+                  icon: FiCpu,
+                  title: 'Engineering Discussions',
+                  description:
+                    'Deep dives into software architecture, CNC automation, manufacturing workflows, or blockchain research.',
+                  color: 'from-amber-500 to-orange-600',
+                },
+                {
+                  icon: FiMic,
+                  title: 'Speaking Invitations',
+                  description:
+                    'Conferences, panels, podcasts, or workshops on software engineering, industrial tech, or digital transformation.',
+                  color: 'from-blue-500 to-indigo-600',
+                },
+                {
+                  icon: FiHeart,
+                  title: 'Mentorship',
+                  description:
+                    'Guiding aspiring engineers and developers — career advice, code reviews, and technical mentoring.',
+                  color: 'from-teal-500 to-cyan-600',
+                },
+              ].map(({ icon: Icon, title, description, color }, i) => (
+                <motion.div
+                  key={title}
+                  variants={fadeUp}
+                  custom={i}
+                  whileHover={{ y: -5 }}
+                  className="glass-card p-6 group overflow-hidden relative"
+                >
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${color}`} />
+                  <div className="w-12 h-12 rounded-xl bg-primary-500/10 flex items-center justify-center mb-4 group-hover:bg-primary-500/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary-500" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{title}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{description}</p>
                 </motion.div>
               ))}
             </motion.div>
