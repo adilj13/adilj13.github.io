@@ -35,7 +35,7 @@ const values = [
   },
   {
     title: 'Continuous Learning',
-    description: 'From SolidWorks to server management — I stay sharp by constantly expanding my toolkit across both mechanical and software domains.',
+    description: 'From SolidWorks to server management - I stay sharp by constantly expanding my toolkit across both mechanical and software domains.',
     icon: FiBookOpen,
   },
   {
@@ -45,7 +45,7 @@ const values = [
   },
   {
     title: 'Leadership',
-    description: 'Leading cross-functional teams at Sufi Engineering — from factory floor technicians to software developers. I value mentorship, clear communication, and ownership.',
+    description: 'Leading cross-functional teams at Sufi Engineering - from factory floor technicians to software developers. I value mentorship, clear communication, and ownership.',
     icon: FiAward,
   },
 ];
@@ -67,8 +67,8 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="About — Adil Aziz"
-        description="Learn about Adil Aziz — Techno-Industrialist, Director at Sufi Engineering. Background in mechanical engineering management, software engineering, and research."
+        title="About - Adil Aziz"
+        description="Learn about Adil Aziz - Techno-Industrialist, Director at Sufi Engineering. Background in mechanical engineering management, software engineering, and research."
         path="/about"
       />
       <Navbar />
@@ -96,7 +96,7 @@ const About = () => {
                 About <span className="gradient-text">Me</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={2} className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mt-6 max-w-2xl">
-                I'm Adil Aziz — a Techno-Industrialist, Director at Sufi Engineering, and a software engineering consultant.
+                I'm Adil Aziz - a Techno-Industrialist, Director at Sufi Engineering, and a software engineering consultant.
                 I manage mechanical engineering operations full-time and do software development part-time.
               </motion.p>
             </motion.div>
@@ -150,7 +150,7 @@ const About = () => {
                     the National University of Sciences and Technology (NUST), Islamabad.
                   </p>
                   <p>
-                    Early in my career, I served at <strong className="text-gray-900 dark:text-white">Pakistan Air Force — Air Headquarters</strong>,
+                    Early in my career, I served at <strong className="text-gray-900 dark:text-white">Pakistan Air Force - Air Headquarters</strong>,
                     where I contributed to technology initiatives and software systems. The discipline and
                     precision I gained there continue to shape my work ethic.
                   </p>
@@ -181,8 +181,8 @@ const About = () => {
                   </h3>
                   <div className="space-y-3">
                     <div>
-                      <p className="font-medium text-gray-900 dark:text-white">Director — Sufi Engineering</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">2020 — Present · Okara, Pakistan</p>
+                      <p className="font-medium text-gray-900 dark:text-white">Director - Sufi Engineering</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">2020 - Present · Okara, Pakistan</p>
                     </div>
                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                       Full-time mechanical engineering management at a ricetech company. Working with CNC machines,
@@ -199,11 +199,11 @@ const About = () => {
                   <div className="space-y-4">
                     <div>
                       <p className="font-medium text-gray-900 dark:text-white">MS Software Engineering</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">NUST — Islamabad</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">NUST - Islamabad</p>
                     </div>
                     <div>
                       <p className="font-medium text-gray-900 dark:text-white">BS Software Engineering</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">University of the Punjab — Lahore</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">University of the Punjab - Lahore</p>
                     </div>
                   </div>
                 </div>

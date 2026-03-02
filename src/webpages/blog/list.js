@@ -59,7 +59,7 @@ const BlogList = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Blog — Adil Aziz"
+        title="Blog - Adil Aziz"
         description="Articles and thoughts by Adil Aziz on mechanical engineering, software development, CNC machining, open source, and technology."
         path="/blog"
       />

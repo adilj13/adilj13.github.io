@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import {
   FiArrowRight, FiGithub, FiTwitter, FiLinkedin, FiBookOpen,
-  FiInstagram, FiCode, FiBriefcase, FiFeather,
+  FiInstagram, FiBriefcase, FiFeather,
   FiMapPin, FiMail, FiUsers,
   FiSettings, FiCompass, FiLayers, FiTerminal, FiExternalLink,
 } from 'react-icons/fi';
@@ -43,7 +43,7 @@ const roles = [
     title: 'Mechanical Engineering Director',
     company: 'Sufi Engineering',
     companyUrl: 'https://sufi.engineering',
-    description: 'Leading mechanical engineering operations at a ricetech company — CNC machining, plant design, SolidWorks, DXF/G-Code pipelines, and industrial automation.',
+    description: 'Leading mechanical engineering operations at a ricetech company - CNC machining, plant design, SolidWorks, DXF/G-Code pipelines, and industrial automation.',
     highlights: ['CNC & CAD/CAM', 'Plant Layout Design', 'Industrial Automation', 'Team Leadership'],
     icon: FaCogs,
     color: 'from-red-500 to-rose-600',
@@ -54,7 +54,7 @@ const roles = [
     title: 'Software Engineering Consultant',
     company: 'Freelance',
     companyUrl: null,
-    description: 'Building web applications, managing server infrastructure, and providing technical strategy for businesses — PHP, Laravel, React, Ubuntu, Docker.',
+    description: 'Building web applications, managing server infrastructure, and providing technical strategy for businesses - PHP, Laravel, React, Ubuntu, Docker.',
     highlights: ['Web Development', 'Server Management', 'DevOps', 'Open Source'],
     icon: FiTerminal,
     color: 'from-blue-500 to-indigo-600',
@@ -84,7 +84,6 @@ const featuredClients = [
 
 const Home = () => {
   const [avatarUrl, setAvatarUrl] = useState(null);
-  const [githubStats, setGithubStats] = useState(null);
   const [latestBlog, setLatestBlog] = useState(null);
 
   useEffect(() => {
@@ -92,7 +91,6 @@ const Home = () => {
       .then((r) => r.json())
       .then((data) => {
         if (data.avatar_url) setAvatarUrl(data.avatar_url);
-        setGithubStats({ repos: data.public_repos || 0, followers: data.followers || 0 });
       })
       .catch(() => {});
   }, []);
@@ -109,7 +107,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Adil Aziz — Techno-Industrialist"
+        title="Adil Aziz - Techno-Industrialist"
         description="Techno-Industrialist and Director at Sufi Engineering. Full-time mechanical engineering management with CNC, SolidWorks, DXF/G-Code. Part-time software engineering consultant."
         path="/"
       />
@@ -157,7 +155,7 @@ const Home = () => {
                   <a href="https://sufi.engineering" target="_blank" rel="noreferrer" className="font-semibold text-primary-500 hover:text-primary-600 underline decoration-primary-500/30 hover:decoration-primary-500 underline-offset-4 transition-colors">
                     Sufi Engineering
                   </a>{' '}
-                  — a ricetech company in Pakistan — and build software part-time as a consultant. I call this being a Techno-Industrialist.
+                  - a ricetech company in Pakistan - and build software part-time as a consultant. I call this being a Techno-Industrialist.
                 </motion.p>
 
                 <motion.div variants={fadeUp} custom={4} className="flex flex-wrap items-center gap-4 pt-1">
@@ -178,7 +176,7 @@ const Home = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Right (2/5) — Avatar + Stats */}
+              {/* Right (2/5) - Avatar + Stats */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -196,20 +194,19 @@ const Home = () => {
                   </div>
                 </div>
 
-                {githubStats && (
-                  <div className="flex items-center gap-4">
-                    {[
-                      { icon: FiCode, value: githubStats.repos, label: 'Repos' },
-                      { icon: FiUsers, value: githubStats.followers, label: 'Followers' },
-                    ].map(({ icon: Icon, value, label }) => (
-                      <div key={label} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-800/50">
-                        <Icon className="w-3.5 h-3.5 text-primary-500" />
-                        <span className="text-sm font-bold text-gray-900 dark:text-white">{value}</span>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">{label}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <div className="flex items-center gap-3">
+                  {[
+                    { icon: FiBriefcase, value: '5+', label: 'Years' },
+                    { icon: FiLayers, value: '20+', label: 'Projects' },
+                    { icon: FiBookOpen, value: '2', label: 'Papers' },
+                  ].map(({ icon: Icon, value, label }) => (
+                    <div key={label} className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-800/50">
+                      <Icon className="w-3.5 h-3.5 text-primary-500" />
+                      <span className="text-sm font-bold text-gray-900 dark:text-white">{value}</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">{label}</span>
+                    </div>
+                  ))}
+                </div>
 
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                   <FiMapPin className="w-3.5 h-3.5" />
@@ -245,7 +242,7 @@ const Home = () => {
                 Two Worlds, <span className="gradient-text">One Person</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-gray-500 dark:text-gray-400 text-lg mt-3 max-w-2xl mx-auto">
-                I split my time between the factory floor and the terminal — bringing engineering discipline to both.
+                I split my time between the factory floor and the terminal - bringing engineering discipline to both.
               </motion.p>
             </motion.div>
 

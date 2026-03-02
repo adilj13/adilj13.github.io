@@ -88,11 +88,11 @@ const clients = [
     name: 'BrandMark',
     type: 'Branding & Design Agency',
     logo: '🏷️',
-    period: '2024 — Present',
+    period: '2024 - Present',
     status: 'Ongoing',
     website: null,
     description:
-      'Partnered with BrandMark to architect and deliver their complete digital infrastructure — from a high-performance web presence to robust backend systems and secure server architecture.',
+      'Partnered with BrandMark to architect and deliver their complete digital infrastructure - from a high-performance web presence to robust backend systems and secure server architecture.',
     services: [
       'Full-stack web application development (PHP / Laravel)',
       'Server provisioning, deployment & management (Ubuntu / Nginx)',
@@ -114,11 +114,11 @@ const clients = [
     name: 'Legacy International Consultants',
     type: 'International Consulting Firm',
     logo: '🌐',
-    period: '2023 — Present',
+    period: '2023 - Present',
     status: 'Ongoing',
     website: null,
     description:
-      'Serving as the technology consultant for Legacy International Consultants — leading their digital transformation, building web platforms, and managing their entire IT infrastructure from scratch.',
+      'Serving as the technology consultant for Legacy International Consultants - leading their digital transformation, building web platforms, and managing their entire IT infrastructure from scratch.',
     services: [
       'Corporate website design & development',
       'Client management portal & CRM integration',
@@ -140,11 +140,11 @@ const clients = [
     name: 'Sufi Engineering',
     type: 'Industrial Manufacturing (Rice Tech)',
     logo: '🏭',
-    period: '2020 — Present',
+    period: '2020 - Present',
     status: 'Full-time',
     website: 'https://sufi.engineering',
     description:
-      'As Director, I built and maintain all internal software systems alongside managing full-time mechanical engineering operations — CNC machining, laser cutting, and fabrication workflows powered by custom software.',
+      'As Director, I built and maintain all internal software systems alongside managing full-time mechanical engineering operations - CNC machining, laser cutting, and fabrication workflows powered by custom software.',
     services: [
       'Internal ERP & inventory management system',
       'CNC job tracking & production dashboard',
@@ -163,14 +163,14 @@ const clients = [
     accentText: 'text-teal-600 dark:text-teal-400',
   },
   {
-    name: 'Pakistan Air Force — Air HQ',
+    name: 'Pakistan Air Force - Air HQ',
     type: 'Government / Defense',
     logo: '✈️',
     period: 'Previously',
     status: 'Completed',
     website: null,
     description:
-      'Served in the IT division at Pakistan Air Force Headquarters — contributed to internal tools, data management systems, and network infrastructure in a high-security environment.',
+      'Served in the IT division at Pakistan Air Force Headquarters - contributed to internal tools, data management systems, and network infrastructure in a high-security environment.',
     services: [
       'Internal web application development',
       'Database management & automated reporting',
@@ -199,9 +199,9 @@ const services = [
 ];
 
 const testimonials = [
-  { quote: 'Adil transformed our entire digital presence. From server setup to web development, he handled everything with professionalism and deep technical expertise.', author: 'BrandMark', role: 'Client — Branding Agency' },
-  { quote: 'His ability to understand both the business and technical side made the engagement seamless. Our systems are reliable, fast, and cost-effective.', author: 'Legacy International Consultants', role: 'Client — Consulting Firm' },
-  { quote: 'Bridging industrial engineering and software is rare. Adil built tools that reduced our manufacturing downtime by 80% — that speaks for itself.', author: 'Sufi Engineering', role: 'Internal — Manufacturing' },
+  { quote: 'Adil transformed our entire digital presence. From server setup to web development, he handled everything with professionalism and deep technical expertise.', author: 'BrandMark', role: 'Client - Branding Agency' },
+  { quote: 'His ability to understand both the business and technical side made the engagement seamless. Our systems are reliable, fast, and cost-effective.', author: 'Legacy International Consultants', role: 'Client - Consulting Firm' },
+  { quote: 'Bridging industrial engineering and software is rare. Adil built tools that reduced our manufacturing downtime by 80% - that speaks for itself.', author: 'Sufi Engineering', role: 'Internal - Manufacturing' },
 ];
 
 // ──────────────────────────────────────────
@@ -210,10 +210,10 @@ const testimonials = [
 
 const experience = [
   {
-    role: 'Director — Mechanical Engineering Management',
+    role: 'Director - Mechanical Engineering Management',
     company: 'Sufi Engineering',
     location: 'Okara, Pakistan',
-    period: '2020 — Present (Full-time)',
+    period: '2020 - Present (Full-time)',
     description: 'Leading mechanical engineering operations at a ricetech company focused on innovation in rice processing technology.',
     highlights: [
       'Managing CNC machining operations with DXF, G-Code, SolidWorks, and Aspire',
@@ -237,7 +237,7 @@ const experience = [
   },
   {
     role: 'Software Engineer',
-    company: 'Pakistan Air Force — Air HQ',
+    company: 'Pakistan Air Force - Air HQ',
     location: 'Islamabad, Pakistan',
     period: 'Previously',
     description: 'Contributed to technology and software systems at Air Headquarters.',
@@ -301,7 +301,7 @@ const skillCategories = [
 ];
 
 const certifications = [
-  { title: 'Google Scholar — Published Researcher', link: 'https://scholar.google.com/citations?user=MxLBLrYAAAAJ' },
+  { title: 'Google Scholar - Published Researcher', link: 'https://scholar.google.com/citations?user=MxLBLrYAAAAJ' },
 ];
 
 // ──────────────────────────────────────────
@@ -446,7 +446,7 @@ const Work = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Work — Adil Aziz"
+        title="Work - Adil Aziz"
         description="Projects, portfolio, and resume of Adil Aziz. GitHub repositories, client case studies, work experience, education, and skills."
         path="/work"
       />
@@ -474,7 +474,7 @@ const Work = () => {
               </motion.h1>
 
               <motion.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Open-source projects, client engagements, and my professional background — all in one place.
+                Open-source projects, client engagements, and my professional background - all in one place.
               </motion.p>
             </motion.div>
           </div>
@@ -956,7 +956,7 @@ const Work = () => {
                     <div className="max-w-3xl mx-auto">
                       {[
                         { step: '01', title: 'Discovery Call', desc: 'We discuss your requirements, current pain points, and goals. I assess whether I\'m the right fit for the engagement.' },
-                        { step: '02', title: 'Proposal & Scope', desc: 'I outline the scope of work, deliverables, timeline, and pricing. No hidden costs — everything is transparent.' },
+                        { step: '02', title: 'Proposal & Scope', desc: 'I outline the scope of work, deliverables, timeline, and pricing. No hidden costs - everything is transparent.' },
                         { step: '03', title: 'Build & Deliver', desc: 'I execute the project with regular updates and demos. You get clean, documented, production-ready work.' },
                         { step: '04', title: 'Support & Iterate', desc: 'Post-delivery support, monitoring, and iterative improvements. I\'m here for the long run if needed.' },
                       ].map((item, i) => (
@@ -1016,7 +1016,7 @@ const Work = () => {
                   {/* Download button */}
                   <div className="mb-10">
                     <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-                      Techno-Industrialist — mechanical engineering management (full-time) and software engineering consulting (part-time).
+                      Techno-Industrialist - mechanical engineering management (full-time) and software engineering consulting (part-time).
                     </p>
                     <a
                       href="https://drive.google.com/file/d/placeholder"

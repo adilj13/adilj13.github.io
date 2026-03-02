@@ -99,7 +99,7 @@ const Publications = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Publications — Adil Aziz"
+        title="Publications - Adil Aziz"
         description="Academic publications and research papers by Adil Aziz. Blockchain stress testing, usability testing with IFML models, and more. Published in IEEE and international conferences."
         path="/publications"
       />

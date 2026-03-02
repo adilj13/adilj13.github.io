@@ -34,11 +34,11 @@ const clients = [
     name: 'BrandMark',
     type: 'Branding & Design Agency',
     logo: '🏷️',
-    period: '2024 — Present',
+    period: '2024 - Present',
     status: 'Ongoing',
     website: null,
     description:
-      'Partnered with BrandMark to architect and deliver their complete digital infrastructure — from a high-performance web presence to robust backend systems and secure server architecture.',
+      'Partnered with BrandMark to architect and deliver their complete digital infrastructure - from a high-performance web presence to robust backend systems and secure server architecture.',
     services: [
       'Full-stack web application development (PHP / Laravel)',
       'Server provisioning, deployment & management (Ubuntu / Nginx)',
@@ -60,11 +60,11 @@ const clients = [
     name: 'Legacy International Consultants',
     type: 'International Consulting Firm',
     logo: '🌐',
-    period: '2023 — Present',
+    period: '2023 - Present',
     status: 'Ongoing',
     website: null,
     description:
-      'Serving as the technology consultant for Legacy International Consultants — leading their digital transformation, building web platforms, and managing their entire IT infrastructure from scratch.',
+      'Serving as the technology consultant for Legacy International Consultants - leading their digital transformation, building web platforms, and managing their entire IT infrastructure from scratch.',
     services: [
       'Corporate website design & development',
       'Client management portal & CRM integration',
@@ -86,11 +86,11 @@ const clients = [
     name: 'Sufi Engineering',
     type: 'Industrial Manufacturing (Rice Tech)',
     logo: '🏭',
-    period: '2020 — Present',
+    period: '2020 - Present',
     status: 'Full-time',
     website: 'https://sufi.engineering',
     description:
-      'As Director, I built and maintain all internal software systems alongside managing full-time mechanical engineering operations — CNC machining, laser cutting, and fabrication workflows powered by custom software.',
+      'As Director, I built and maintain all internal software systems alongside managing full-time mechanical engineering operations - CNC machining, laser cutting, and fabrication workflows powered by custom software.',
     services: [
       'Internal ERP & inventory management system',
       'CNC job tracking & production dashboard',
@@ -109,14 +109,14 @@ const clients = [
     accentText: 'text-teal-600 dark:text-teal-400',
   },
   {
-    name: 'Pakistan Air Force — Air HQ',
+    name: 'Pakistan Air Force - Air HQ',
     type: 'Government / Defense',
     logo: '✈️',
     period: 'Previously',
     status: 'Completed',
     website: null,
     description:
-      'Served in the IT division at Pakistan Air Force Headquarters — contributed to internal tools, data management systems, and network infrastructure in a high-security environment.',
+      'Served in the IT division at Pakistan Air Force Headquarters - contributed to internal tools, data management systems, and network infrastructure in a high-security environment.',
     services: [
       'Internal web application development',
       'Database management & automated reporting',
@@ -181,19 +181,19 @@ const testimonials = [
     quote:
       'Adil transformed our entire digital presence. From server setup to web development, he handled everything with professionalism and deep technical expertise.',
     author: 'BrandMark',
-    role: 'Client — Branding Agency',
+    role: 'Client - Branding Agency',
   },
   {
     quote:
       'His ability to understand both the business and technical side made the engagement seamless. Our systems are reliable, fast, and cost-effective.',
     author: 'Legacy International Consultants',
-    role: 'Client — Consulting Firm',
+    role: 'Client - Consulting Firm',
   },
   {
     quote:
-      'Bridging industrial engineering and software is rare. Adil built tools that reduced our manufacturing downtime by 80% — that speaks for itself.',
+      'Bridging industrial engineering and software is rare. Adil built tools that reduced our manufacturing downtime by 80% - that speaks for itself.',
     author: 'Sufi Engineering',
-    role: 'Internal — Manufacturing',
+    role: 'Internal - Manufacturing',
   },
 ];
 
@@ -205,7 +205,7 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Portfolio — Adil Aziz"
+        title="Portfolio - Adil Aziz"
         description="Client work and consulting portfolio by Adil Aziz. Web development, server management, and IT consulting for BrandMark, Legacy International Consultants, Sufi Engineering, and more."
         path="/portfolio"
       />
@@ -236,7 +236,7 @@ const Portfolio = () => {
               </motion.h1>
 
               <motion.p variants={fadeUp} custom={2} className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mt-6 max-w-2xl mx-auto">
-                Organizations I've partnered with — delivering web development, server infrastructure,
+                Organizations I've partnered with - delivering web development, server infrastructure,
                 IT consulting, and industrial technology solutions as a Techno-Industrialist.
               </motion.p>
 
@@ -517,7 +517,7 @@ const Portfolio = () => {
             <div className="max-w-3xl mx-auto">
               {[
                 { step: '01', title: 'Discovery Call', desc: 'We discuss your requirements, current pain points, and goals. I assess whether I\'m the right fit for the engagement.' },
-                { step: '02', title: 'Proposal & Scope', desc: 'I outline the scope of work, deliverables, timeline, and pricing. No hidden costs — everything is transparent.' },
+                { step: '02', title: 'Proposal & Scope', desc: 'I outline the scope of work, deliverables, timeline, and pricing. No hidden costs - everything is transparent.' },
                 { step: '03', title: 'Build & Deliver', desc: 'I execute the project with regular updates and demos. You get clean, documented, production-ready work.' },
                 { step: '04', title: 'Support & Iterate', desc: 'Post-delivery support, monitoring, and iterative improvements. I\'m here for the long run if needed.' },
               ].map((item, i) => (

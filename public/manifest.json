@@ -1,6 +1,6 @@
 {
   "short_name": "Adil Aziz",
-  "name": "Adil Aziz — Techno-Industrialist",
+  "name": "Adil Aziz - Techno-Industrialist",
   "icons": [
     {
       "src": "favicon.ico",
@@ -22,5 +22,5 @@
   "display": "standalone",
   "theme_color": "#dc2626",
   "background_color": "#0a0a0a",
-  "description": "Adil Aziz — Techno-Industrialist, Director at Sufi Engineering. Mechanical engineering management and software consulting."
+  "description": "Adil Aziz - Techno-Industrialist, Director at Sufi Engineering. Mechanical engineering management and software consulting."
 }

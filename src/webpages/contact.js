@@ -99,7 +99,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Contact — Adil Aziz"
+        title="Contact - Adil Aziz"
         description="Get in touch with Adil Aziz. Available for software engineering consulting, technical strategy, and collaborations. Reach out via X, GitHub, LinkedIn, or email."
         path="/contact"
       />
@@ -193,7 +193,7 @@ const Contact = () => {
                 Ways to <span className="gradient-text">Collaborate</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="section-subheading">
-                I'm always open to meaningful collaborations — here's how we can work together
+                I'm always open to meaningful collaborations - here's how we can work together
               </motion.p>
             </motion.div>
 
@@ -230,7 +230,7 @@ const Contact = () => {
                   icon: FiHeart,
                   title: 'Mentorship',
                   description:
-                    'Guiding aspiring engineers and developers — career advice, code reviews, and technical mentoring.',
+                    'Guiding aspiring engineers and developers - career advice, code reviews, and technical mentoring.',
                   color: 'from-teal-500 to-cyan-600',
                 },
               ].map(({ icon: Icon, title, description, color }, i) => (

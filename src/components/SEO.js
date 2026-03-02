@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet';
 
 const SITE_URL = 'https://adilj13.github.io';
-const DEFAULT_TITLE = 'Adil Aziz — Techno-Industrialist';
-const DEFAULT_DESCRIPTION = 'Adil Aziz — Techno-Industrialist, Director at Sufi Engineering. Full-time mechanical engineering management, part-time software engineering consultant. CNC, CAD, SolidWorks, and web development.';
+const DEFAULT_TITLE = 'Adil Aziz - Techno-Industrialist';
+const DEFAULT_DESCRIPTION = 'Adil Aziz - Techno-Industrialist, Director at Sufi Engineering. Full-time mechanical engineering management, part-time software engineering consultant. CNC, CAD, SolidWorks, and web development.';
 const DEFAULT_IMAGE = 'https://avatars.githubusercontent.com/u/adilj13';
 const SITE_NAME = 'Adil Aziz';
 

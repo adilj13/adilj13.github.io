@@ -183,7 +183,7 @@ const Writing = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Writing — Adil Aziz"
+        title="Writing - Adil Aziz"
         description="Blog posts, academic publications, and Bluesky posts by Adil Aziz. Thoughts on software engineering, mechanical engineering, blockchain research, and more."
         path="/writing"
       />
@@ -216,7 +216,7 @@ const Writing = () => {
               </motion.h1>
 
               <motion.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Blog articles, academic publications, and social posts — all in one place.
+                Blog articles, academic publications, and social posts - all in one place.
               </motion.p>
             </motion.div>
           </div>

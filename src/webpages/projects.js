@@ -195,7 +195,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Projects — Adil Aziz"
+        title="Projects - Adil Aziz"
         description="Open source projects and GitHub repositories by Adil Aziz. Software engineering work including web apps, tools, and contributions to PUCITHD and Sufi Engineering."
         path="/projects"
       />
@@ -220,7 +220,7 @@ const Projects = () => {
                 My <span className="gradient-text">Projects</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={1} className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mt-4 max-w-2xl">
-                All my repositories and contributions fetched live from GitHub — including
+                All my repositories and contributions fetched live from GitHub - including
                 my personal projects and work with <strong className="text-gray-900 dark:text-white">PUCITHD</strong> and <strong className="text-gray-900 dark:text-white">Sufi Engineering</strong>.
               </motion.p>
 

@@ -33,7 +33,7 @@ const coreBeliefs = [
   {
     icon: FiTarget,
     title: 'Build What Matters',
-    body: "I don't chase trends — I chase impact. Every project, every system, every design should solve a real problem for real people. If it doesn't make someone's life easier or a process more efficient, it's not worth building.",
+    body: "I don't chase trends - I chase impact. Every project, every system, every design should solve a real problem for real people. If it doesn't make someone's life easier or a process more efficient, it's not worth building.",
     color: 'from-red-500 to-rose-600',
   },
   {
@@ -45,7 +45,7 @@ const coreBeliefs = [
   {
     icon: FiShield,
     title: 'Own Your Work',
-    body: 'Ship it, stand behind it, fix it when it breaks. I believe in full ownership — from the first line of code to production deployment, from the first DXF sketch to the final CNC cut. No finger-pointing, just accountability.',
+    body: 'Ship it, stand behind it, fix it when it breaks. I believe in full ownership - from the first line of code to production deployment, from the first DXF sketch to the final CNC cut. No finger-pointing, just accountability.',
     color: 'from-blue-500 to-indigo-600',
   },
   {
@@ -64,7 +64,7 @@ const principles = [
   {
     icon: FiCompass,
     title: 'Simplicity Over Cleverness',
-    description: 'The simplest solution that works is almost always the right one. Complexity is easy — clarity is hard.',
+    description: 'The simplest solution that works is almost always the right one. Complexity is easy - clarity is hard.',
   },
   {
     icon: FiTrendingUp,
@@ -74,12 +74,12 @@ const principles = [
   {
     icon: FiUsers,
     title: 'Teach What You Know',
-    description: "Knowledge grows when shared. Mentoring junior engineers and open-sourcing work isn't charity — it's how industries evolve.",
+    description: "Knowledge grows when shared. Mentoring junior engineers and open-sourcing work isn't charity - it's how industries evolve.",
   },
   {
     icon: FiStar,
     title: 'Quality Is Non-Negotiable',
-    description: "Whether it's a weld on a steel frame or an API endpoint — if it's worth doing, it's worth doing right. Cutting corners costs more later.",
+    description: "Whether it's a weld on a steel frame or an API endpoint - if it's worth doing, it's worth doing right. Cutting corners costs more later.",
   },
   {
     icon: FiBookOpen,
@@ -89,7 +89,7 @@ const principles = [
   {
     icon: FiSunrise,
     title: 'Long-Term Thinking',
-    description: 'I optimise for decades, not quarters. Every decision — technical, financial, personal — gets filtered through: "Will this matter in 10 years?"',
+    description: 'I optimise for decades, not quarters. Every decision - technical, financial, personal - gets filtered through: "Will this matter in 10 years?"',
   },
 ];
 
@@ -111,7 +111,7 @@ const mantras = [
     context: 'On being a Techno-Industrialist',
   },
   {
-    quote: "If your work doesn't survive without you, you haven't built a system — you've built a dependency.",
+    quote: "If your work doesn't survive without you, you haven't built a system - you've built a dependency.",
     context: 'On building resilient teams and systems',
   },
 ];
@@ -124,8 +124,8 @@ const Philosophy = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Philosophy — Adil Aziz"
-        description="The principles, beliefs, and mantras that guide Adil Aziz as a Techno-Industrialist — bridging mechanical engineering and software consulting with intentionality."
+        title="Philosophy - Adil Aziz"
+        description="The principles, beliefs, and mantras that guide Adil Aziz as a Techno-Industrialist - bridging mechanical engineering and software consulting with intentionality."
         path="/philosophy"
       />
       <Navbar />
@@ -163,7 +163,7 @@ const Philosophy = () => {
                 custom={2}
                 className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mt-6 max-w-2xl mx-auto"
               >
-                The ideas that shape how I work, lead, and build — at the intersection of
+                The ideas that shape how I work, lead, and build - at the intersection of
                 industrial engineering and software craftsmanship.
               </motion.p>
             </motion.div>
@@ -337,7 +337,7 @@ const Philosophy = () => {
                 variants={fadeUp}
                 className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto mb-8"
               >
-                These aren't just words on a page — they're how I run teams, build software,
+                These aren't just words on a page - they're how I run teams, build software,
                 design machines, and live my life. If any of this resonates, let's connect.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">

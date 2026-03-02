@@ -24,10 +24,10 @@ const stagger = {
 
 const experience = [
   {
-    role: 'Director — Mechanical Engineering Management',
+    role: 'Director - Mechanical Engineering Management',
     company: 'Sufi Engineering',
     location: 'Okara, Pakistan',
-    period: '2020 — Present (Full-time)',
+    period: '2020 - Present (Full-time)',
     description: 'Leading mechanical engineering operations at a ricetech company focused on innovation in rice processing technology.',
     highlights: [
       'Managing CNC machining operations with DXF, G-Code, SolidWorks, and Aspire',
@@ -51,7 +51,7 @@ const experience = [
   },
   {
     role: 'Software Engineer',
-    company: 'Pakistan Air Force — Air HQ',
+    company: 'Pakistan Air Force - Air HQ',
     location: 'Islamabad, Pakistan',
     period: 'Previously',
     description: 'Contributed to technology and software systems at Air Headquarters.',
@@ -115,15 +115,15 @@ const skillCategories = [
 ];
 
 const certifications = [
-  { title: 'Google Scholar — Published Researcher', link: 'https://scholar.google.com/citations?user=MxLBLrYAAAAJ' },
+  { title: 'Google Scholar - Published Researcher', link: 'https://scholar.google.com/citations?user=MxLBLrYAAAAJ' },
 ];
 
 const Resume = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Resume — Adil Aziz"
-        description="Resume of Adil Aziz — Techno-Industrialist. Experience in mechanical engineering management at Sufi Engineering, software consulting, CNC/CAD skills, and education from NUST and University of the Punjab."
+        title="Resume - Adil Aziz"
+        description="Resume of Adil Aziz - Techno-Industrialist. Experience in mechanical engineering management at Sufi Engineering, software consulting, CNC/CAD skills, and education from NUST and University of the Punjab."
         path="/resume"
       />
       <Navbar />
@@ -146,7 +146,7 @@ const Resume = () => {
                 My <span className="gradient-text">Resume</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={1} className="text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl">
-                Techno-Industrialist — mechanical engineering management (full-time) and software engineering consulting (part-time).
+                Techno-Industrialist - mechanical engineering management (full-time) and software engineering consulting (part-time).
               </motion.p>
               <motion.div variants={fadeUp} custom={2} className="mt-6">
                 <a

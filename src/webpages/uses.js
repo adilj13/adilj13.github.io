@@ -57,7 +57,7 @@ const categories = [
     items: [
       {
         name: 'HP Elitebook 840 G5',
-        detail: 'Intel i5 8th Gen, 16GB RAM, 256GB SSD — Reliable workhorse for development and multitasking.',
+        detail: 'Intel i5 8th Gen, 16GB RAM, 256GB SSD - Reliable workhorse for development and multitasking.',
       },
       {
         name: 'ASUS 24" Monitor × 2',
@@ -83,7 +83,7 @@ const categories = [
         icon: SiVscodium,
       },
       {
-        name: 'Terminal — Zsh + Oh My Zsh',
+        name: 'Terminal - Zsh + Oh My Zsh',
         detail: 'Custom prompt with Powerlevel10k theme. Aliases and functions for faster workflow.',
         icon: FiTerminal,
       },
@@ -152,7 +152,7 @@ const Uses = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Uses — Adil Aziz"
+        title="Uses - Adil Aziz"
         description="Hardware, software, and engineering tools that Adil Aziz uses daily. SolidWorks, Aspire, CNC machines, VS Code, Docker, and more."
         path="/uses"
       />

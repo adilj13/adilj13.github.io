@@ -81,7 +81,7 @@ function BlogDetails() {
             ) : blog ? (
               <>
                 <SEO
-                  title={`${blog.title.replace(/<[^>]+>/g, '')} — Adil Aziz`}
+                  title={`${blog.title.replace(/<[^>]+>/g, '')} - Adil Aziz`}
                   description={blog.excerpt ? blog.excerpt.replace(/<[^>]+>/g, '').substring(0, 160) : ''}
                   path={`/blog/${slug}`}
                   type="article"
