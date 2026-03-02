@@ -7,12 +7,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navLinks = [
   { to: '/', label: 'Home', key: 'home' },
   { to: '/about', label: 'About', key: 'about' },
-  { to: '/projects', label: 'Projects', key: 'projects' },
-  { to: '/portfolio', label: 'Portfolio', key: 'portfolio' },
-  { to: '/publications', label: 'Publications', key: 'publications' },
-  { to: '/resume', label: 'Resume', key: 'resume' },
+  { to: '/work', label: 'Work', key: 'work' },
+  { to: '/writing', label: 'Writing', key: 'writing' },
+  { to: '/philosophy', label: 'Philosophy', key: 'philosophy' },
   { to: '/uses', label: 'Uses', key: 'uses' },
-  { to: '/blog', label: 'Blog', key: 'blog' },
   { to: '/contact', label: 'Contact', key: 'contact' },
 ];
 

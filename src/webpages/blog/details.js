@@ -103,10 +103,10 @@ function BlogDetails() {
                   >
                     {/* Back link */}
                     <Link
-                      to="/blog"
+                      to="/writing"
                       className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors mb-6"
                     >
-                      <FiArrowLeft className="w-4 h-4" /> Back to blog
+                      <FiArrowLeft className="w-4 h-4" /> Back to writing
                     </Link>
 
                     {/* Title */}

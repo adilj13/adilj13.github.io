@@ -11,34 +11,24 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://adilj13.github.io/projects</loc>
+    <loc>https://adilj13.github.io/work</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://adilj13.github.io/portfolio</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://adilj13.github.io/writing</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://adilj13.github.io/publications</loc>
+    <loc>https://adilj13.github.io/philosophy</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://adilj13.github.io/resume</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://adilj13.github.io/uses</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://adilj13.github.io/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://adilj13.github.io/contact</loc>

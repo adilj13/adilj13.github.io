@@ -14,11 +14,9 @@ const socialLinks = [
 const footerLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/portfolio', label: 'Portfolio' },
-  { to: '/publications', label: 'Publications' },
-  { to: '/resume', label: 'Resume' },
-  { to: '/blog', label: 'Blog' },
+  { to: '/work', label: 'Work' },
+  { to: '/writing', label: 'Writing' },
+  { to: '/philosophy', label: 'Philosophy' },
   { to: '/contact', label: 'Contact' },
 ];
 

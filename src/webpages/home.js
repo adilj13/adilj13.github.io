@@ -168,10 +168,10 @@ const Home = () => {
                 </motion.p>
 
                 <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-4">
-                  <Link to="/projects" className="btn-primary">
+                  <Link to="/work" className="btn-primary">
                     View My Work <FiArrowRight className="w-4 h-4" />
                   </Link>
-                  <Link to="/blog" className="btn-secondary">
+                  <Link to="/writing" className="btn-secondary">
                     <FiBookOpen className="w-4 h-4" /> Read Blog
                   </Link>
                 </motion.div>
@@ -370,7 +370,7 @@ const Home = () => {
                 <Link to="/contact" className="btn-primary">
                   Get in Touch <FiArrowRight className="w-4 h-4" />
                 </Link>
-                <Link to="/blog" className="btn-secondary">
+                <Link to="/writing" className="btn-secondary">
                   <FiBookOpen className="w-4 h-4" /> Read My Blog
                 </Link>
               </motion.div>
