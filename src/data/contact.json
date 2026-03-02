@@ -1,0 +1,74 @@
+{
+  "contactMethods": [
+    {
+      "title": "Chat on X",
+      "description": "Primary option to contact me. Inbox me on my X profile.",
+      "link": "https://x.com/adilj13",
+      "linkLabel": "@adilj13",
+      "color": "text-sky-500",
+      "bgColor": "bg-sky-50 dark:bg-sky-500/10"
+    },
+    {
+      "title": "GitHub",
+      "description": "Check out my open source projects and contributions.",
+      "link": "https://github.com/adilj13",
+      "linkLabel": "adilj13",
+      "color": "text-gray-700 dark:text-gray-300",
+      "bgColor": "bg-gray-100 dark:bg-gray-800"
+    },
+    {
+      "title": "LinkedIn",
+      "description": "Connect with me professionally on LinkedIn.",
+      "link": "https://linkedin.com/in/adilj13",
+      "linkLabel": "adilj13",
+      "color": "text-blue-600",
+      "bgColor": "bg-blue-50 dark:bg-blue-500/10"
+    },
+    {
+      "title": "Instagram",
+      "description": "Follow me on Instagram for updates and stories.",
+      "link": "https://instagram.com/adilj13",
+      "linkLabel": "@adilj13",
+      "color": "text-pink-500",
+      "bgColor": "bg-pink-50 dark:bg-pink-500/10"
+    },
+    {
+      "title": "TikTok",
+      "description": "Check out my TikTok for short-form content.",
+      "link": "https://tiktok.com/@adilj13",
+      "linkLabel": "@adilj13",
+      "color": "text-gray-900 dark:text-white",
+      "bgColor": "bg-gray-100 dark:bg-gray-800"
+    },
+    {
+      "title": "Location",
+      "description": "Sufi Engineering, 24-Safdar Town, Lahore Road, Okara.",
+      "link": null,
+      "linkLabel": null,
+      "color": "text-red-500",
+      "bgColor": "bg-red-50 dark:bg-red-500/10"
+    }
+  ],
+  "collaborationTypes": [
+    {
+      "title": "Partnerships",
+      "description": "Joint ventures, technical partnerships, and long-term collaborations in software engineering or industrial technology.",
+      "color": "from-red-500 to-rose-600"
+    },
+    {
+      "title": "Engineering Discussions",
+      "description": "Deep dives into software architecture, CNC automation, manufacturing workflows, or blockchain research.",
+      "color": "from-amber-500 to-orange-600"
+    },
+    {
+      "title": "Speaking Invitations",
+      "description": "Conferences, panels, podcasts, or workshops on software engineering, industrial tech, or digital transformation.",
+      "color": "from-blue-500 to-indigo-600"
+    },
+    {
+      "title": "Mentorship",
+      "description": "Guiding aspiring engineers and developers - career advice, code reviews, and technical mentoring.",
+      "color": "from-teal-500 to-cyan-600"
+    }
+  ]
+}

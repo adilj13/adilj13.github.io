@@ -1,0 +1,38 @@
+{
+  "stats": [
+    { "label": "Years Experience", "value": "5+" },
+    { "label": "Projects Built", "value": "20+" },
+    { "label": "Publications", "value": "3" },
+    { "label": "Cups of Coffee", "value": "∞" }
+  ],
+  "values": [
+    {
+      "title": "Industrial Innovation",
+      "description": "Bridging the gap between traditional industry and modern technology. Applying engineering precision to manufacturing and rice processing."
+    },
+    {
+      "title": "Continuous Learning",
+      "description": "From SolidWorks to server management - I stay sharp by constantly expanding my toolkit across both mechanical and software domains."
+    },
+    {
+      "title": "Impact-Driven Work",
+      "description": "Every design and every line of code should serve a purpose. I focus on solutions that solve real problems in the real world."
+    },
+    {
+      "title": "Leadership",
+      "description": "Leading cross-functional teams at Sufi Engineering - from factory floor technicians to software developers. I value mentorship, clear communication, and ownership."
+    }
+  ],
+  "interests": [
+    "Mechanical Engineering",
+    "CNC & CAD/CAM",
+    "SolidWorks & Aspire",
+    "DXF & G-Code",
+    "Industrial Automation",
+    "Rice Processing Technology",
+    "Software Consulting",
+    "Server Management",
+    "Open Source",
+    "PHP & Laravel"
+  ]
+}

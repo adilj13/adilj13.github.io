@@ -21,6 +21,8 @@ import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import portfolioData from '../data/portfolio.json';
+import resumeData from '../data/resume.json';
 
 // ──────────────────────────────────────────
 //  ANIMATION HELPERS
@@ -80,229 +82,32 @@ const langColors = {
 };
 
 // ──────────────────────────────────────────
-//  PORTFOLIO DATA
+//  PORTFOLIO DATA (from JSON)
 // ──────────────────────────────────────────
 
-const clients = [
-  {
-    name: 'BrandMark',
-    type: 'Branding & Design Agency',
-    logo: '🏷️',
-    period: '2024 - Present',
-    status: 'Ongoing',
-    website: null,
-    description:
-      'Partnered with BrandMark to architect and deliver their complete digital infrastructure - from a high-performance web presence to robust backend systems and secure server architecture.',
-    services: [
-      'Full-stack web application development (PHP / Laravel)',
-      'Server provisioning, deployment & management (Ubuntu / Nginx)',
-      'Database design, optimization & migrations (MySQL)',
-      'Domain, DNS & SSL configuration',
-      'Ongoing technical maintenance & consulting',
-    ],
-    technologies: ['PHP', 'Laravel', 'MySQL', 'Ubuntu', 'Nginx', 'Git', 'Cloudflare'],
-    results: [
-      { metric: 'Uptime', value: '99.9%' },
-      { metric: 'Page Load', value: '<1.5s' },
-      { metric: 'Deployments', value: '50+' },
-    ],
-    color: 'from-red-500 to-rose-600',
-    iconBg: 'bg-red-50 dark:bg-red-500/10',
-    accentText: 'text-red-600 dark:text-red-400',
-  },
-  {
-    name: 'Legacy International Consultants',
-    type: 'International Consulting Firm',
-    logo: '🌐',
-    period: '2023 - Present',
-    status: 'Ongoing',
-    website: null,
-    description:
-      'Serving as the technology consultant for Legacy International Consultants - leading their digital transformation, building web platforms, and managing their entire IT infrastructure from scratch.',
-    services: [
-      'Corporate website design & development',
-      'Client management portal & CRM integration',
-      'Cloud server provisioning & security hardening',
-      'Email server setup & management',
-      'IT infrastructure strategy & consulting',
-    ],
-    technologies: ['PHP', 'Laravel', 'React', 'MySQL', 'Ubuntu', 'Docker', 'Nginx', 'Cloudflare'],
-    results: [
-      { metric: 'Systems Built', value: '3' },
-      { metric: 'Users Served', value: '500+' },
-      { metric: 'Cost Savings', value: '40%' },
-    ],
-    color: 'from-amber-500 to-orange-600',
-    iconBg: 'bg-amber-50 dark:bg-amber-500/10',
-    accentText: 'text-amber-600 dark:text-amber-400',
-  },
-  {
-    name: 'Sufi Engineering',
-    type: 'Industrial Manufacturing (Rice Tech)',
-    logo: '🏭',
-    period: '2020 - Present',
-    status: 'Full-time',
-    website: 'https://sufi.engineering',
-    description:
-      'As Director, I built and maintain all internal software systems alongside managing full-time mechanical engineering operations - CNC machining, laser cutting, and fabrication workflows powered by custom software.',
-    services: [
-      'Internal ERP & inventory management system',
-      'CNC job tracking & production dashboard',
-      'DXF file processing & G-Code pipeline automation',
-      'Server & network infrastructure management',
-      'Digital transformation of manufacturing workflows',
-    ],
-    technologies: ['PHP', 'Laravel', 'MySQL', 'Python', 'SolidWorks', 'DXF', 'G-Code', 'Ubuntu'],
-    results: [
-      { metric: 'Efficiency Gain', value: '60%' },
-      { metric: 'Jobs Tracked', value: '2000+' },
-      { metric: 'Downtime Cut', value: '80%' },
-    ],
-    color: 'from-teal-500 to-cyan-600',
-    iconBg: 'bg-teal-50 dark:bg-teal-500/10',
-    accentText: 'text-teal-600 dark:text-teal-400',
-  },
-  {
-    name: 'Pakistan Air Force - Air HQ',
-    type: 'Government / Defense',
-    logo: '✈️',
-    period: 'Previously',
-    status: 'Completed',
-    website: null,
-    description:
-      'Served in the IT division at Pakistan Air Force Headquarters - contributed to internal tools, data management systems, and network infrastructure in a high-security environment.',
-    services: [
-      'Internal web application development',
-      'Database management & automated reporting',
-      'Network infrastructure support',
-      'System documentation & team training',
-    ],
-    technologies: ['PHP', 'MySQL', 'Python', 'Linux', 'Networking'],
-    results: [
-      { metric: 'Tools Built', value: '4+' },
-      { metric: 'Reports Automated', value: '15+' },
-      { metric: 'Environment', value: 'Classified' },
-    ],
-    color: 'from-blue-500 to-indigo-600',
-    iconBg: 'bg-blue-50 dark:bg-blue-500/10',
-    accentText: 'text-blue-600 dark:text-blue-400',
-  },
-];
+const clients = portfolioData.clients;
 
-const services = [
-  { icon: FiCode, title: 'Web Development', description: 'Full-stack applications with PHP, Laravel, React, and modern frontend tooling.' },
-  { icon: FiServer, title: 'Server Management', description: 'Ubuntu provisioning, Nginx, SSH hardening, automated deployments & backups.' },
-  { icon: FiGlobe, title: 'IT Consulting', description: 'Technology strategy, digital transformation planning, and infrastructure audits.' },
-  { icon: FiCpu, title: 'Industrial Tech', description: 'CNC workflow automation, DXF/G-Code pipelines, and manufacturing software.' },
-  { icon: FiPackage, title: 'DevOps & Deployment', description: 'Docker, CI/CD pipelines, domain management, SSL, and Cloudflare configuration.' },
-  { icon: FiTool, title: 'Maintenance & Support', description: 'Ongoing monitoring, security patching, performance tuning, and on-call support.' },
-];
-
-const testimonials = [
-  { quote: 'Adil transformed our entire digital presence. From server setup to web development, he handled everything with professionalism and deep technical expertise.', author: 'BrandMark', role: 'Client - Branding Agency' },
-  { quote: 'His ability to understand both the business and technical side made the engagement seamless. Our systems are reliable, fast, and cost-effective.', author: 'Legacy International Consultants', role: 'Client - Consulting Firm' },
-  { quote: 'Bridging industrial engineering and software is rare. Adil built tools that reduced our manufacturing downtime by 80% - that speaks for itself.', author: 'Sufi Engineering', role: 'Internal - Manufacturing' },
-];
+const serviceIcons = [FiCode, FiServer, FiGlobe, FiCpu, FiPackage, FiTool];
+const services = portfolioData.services.map((s, i) => ({ ...s, icon: serviceIcons[i] }));
+const testimonials = portfolioData.testimonials;
 
 // ──────────────────────────────────────────
-//  RESUME DATA
+//  RESUME DATA (from JSON)
 // ──────────────────────────────────────────
 
-const experience = [
-  {
-    role: 'Director - Mechanical Engineering Management',
-    company: 'Sufi Engineering',
-    location: 'Okara, Pakistan',
-    period: '2020 - Present (Full-time)',
-    description: 'Leading mechanical engineering operations at a ricetech company focused on innovation in rice processing technology.',
-    highlights: [
-      'Managing CNC machining operations with DXF, G-Code, SolidWorks, and Aspire',
-      'Designing and optimizing rice processing plant layouts and machinery components',
-      'Leading cross-functional teams of mechanical engineers and factory floor technicians',
-      'Driving industrial automation and modernization of legacy manufacturing processes',
-    ],
-  },
-  {
-    role: 'Software Engineering Consultant',
-    company: 'Freelance / Part-time',
-    location: 'Remote',
-    period: 'Part-time',
-    description: 'Part-time software development and consulting for web applications, server infrastructure, and technical strategy.',
-    highlights: [
-      'Building and maintaining web applications with PHP, Laravel, and React',
-      'Server management, deployment automation, and infrastructure on Ubuntu/Linux',
-      'Technical consulting for businesses on software architecture and tooling',
-      'Contributing to open source projects and community',
-    ],
-  },
-  {
-    role: 'Software Engineer',
-    company: 'Pakistan Air Force - Air HQ',
-    location: 'Islamabad, Pakistan',
-    period: 'Previously',
-    description: 'Contributed to technology and software systems at Air Headquarters.',
-    highlights: [
-      'Developed and maintained mission-critical software systems',
-      'Worked with secure, high-availability infrastructure',
-      'Collaborated with cross-departmental teams on tech initiatives',
-      'Gained disciplined engineering practices in a high-stakes environment',
-    ],
-  },
-];
+const experience = resumeData.experience;
+const education = resumeData.education;
 
-const education = [
-  {
-    degree: 'MS Software Engineering',
-    institution: 'National University of Sciences and Technology (NUST)',
-    location: 'Islamabad, Pakistan',
-    period: 'Completed',
-    details: 'Focused on software architecture, quality assurance, and research methodologies. Published research papers in software engineering.',
-  },
-  {
-    degree: 'BS Software Engineering',
-    institution: 'University of the Punjab',
-    location: 'Lahore, Pakistan',
-    period: 'Completed',
-    details: 'Core curriculum in computer science, software design, data structures, algorithms, and database systems.',
-  },
-];
-
-const skillCategories = [
-  {
-    title: 'Mechanical & CAD',
-    skills: [
-      { name: 'SolidWorks', icon: FaCogs },
-      { name: 'Aspire', icon: FaCubes },
-      { name: 'DXF / G-Code', icon: FaDraftingCompass },
-      { name: 'CNC Machining', icon: FaIndustry },
-    ],
-  },
-  {
-    title: 'Software (Part-time)',
-    skills: [
-      { name: 'PHP', icon: SiPhp },
-      { name: 'Laravel', icon: SiLaravel },
-      { name: 'React', icon: SiReact },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'Python', icon: SiPython },
-    ],
-  },
-  {
-    title: 'DevOps & Server Mgmt',
-    skills: [
-      { name: 'Ubuntu', icon: SiUbuntu },
-      { name: 'Linux', icon: SiLinux },
-      { name: 'Nginx', icon: SiNginx },
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Git', icon: SiGit },
-      { name: 'AWS', icon: SiAmazonwebservices },
-    ],
-  },
-];
-
-const certifications = [
-  { title: 'Google Scholar - Published Researcher', link: 'https://scholar.google.com/citations?user=MxLBLrYAAAAJ' },
-];
+const skillIconMap = {
+  'SolidWorks': FaCogs, 'Aspire': FaCubes, 'DXF / G-Code': FaDraftingCompass, 'CNC Machining': FaIndustry,
+  'PHP': SiPhp, 'Laravel': SiLaravel, 'React': SiReact, 'JavaScript': SiJavascript, 'Python': SiPython,
+  'Ubuntu': SiUbuntu, 'Linux': SiLinux, 'Nginx': SiNginx, 'Docker': SiDocker, 'Git': SiGit, 'AWS': SiAmazonwebservices,
+};
+const skillCategories = resumeData.skillCategories.map((cat) => ({
+  ...cat,
+  skills: cat.skills.map((name) => ({ name, icon: skillIconMap[name] || null })),
+}));
+const certifications = resumeData.certifications;
 
 // ──────────────────────────────────────────
 //  SKELETON

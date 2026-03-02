@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiCalendar, FiClock, FiEdit3, FiArrowLeft, FiShare2 } from 'react-icons/fi';
+import { FiCalendar, FiEdit3, FiArrowLeft, FiShare2 } from 'react-icons/fi';
 import parse from 'html-react-parser';
 import Moment from 'moment';
 import '../../Blog.css';

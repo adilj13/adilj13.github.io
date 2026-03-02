@@ -8,6 +8,7 @@ import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import resumeData from '../data/resume.json';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,101 +23,19 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const experience = [
-  {
-    role: 'Director - Mechanical Engineering Management',
-    company: 'Sufi Engineering',
-    location: 'Okara, Pakistan',
-    period: '2020 - Present (Full-time)',
-    description: 'Leading mechanical engineering operations at a ricetech company focused on innovation in rice processing technology.',
-    highlights: [
-      'Managing CNC machining operations with DXF, G-Code, SolidWorks, and Aspire',
-      'Designing and optimizing rice processing plant layouts and machinery components',
-      'Leading cross-functional teams of mechanical engineers and factory floor technicians',
-      'Driving industrial automation and modernization of legacy manufacturing processes',
-    ],
-  },
-  {
-    role: 'Software Engineering Consultant',
-    company: 'Freelance / Part-time',
-    location: 'Remote',
-    period: 'Part-time',
-    description: 'Part-time software development and consulting for web applications, server infrastructure, and technical strategy.',
-    highlights: [
-      'Building and maintaining web applications with PHP, Laravel, and React',
-      'Server management, deployment automation, and infrastructure on Ubuntu/Linux',
-      'Technical consulting for businesses on software architecture and tooling',
-      'Contributing to open source projects and community',
-    ],
-  },
-  {
-    role: 'Software Engineer',
-    company: 'Pakistan Air Force - Air HQ',
-    location: 'Islamabad, Pakistan',
-    period: 'Previously',
-    description: 'Contributed to technology and software systems at Air Headquarters.',
-    highlights: [
-      'Developed and maintained mission-critical software systems',
-      'Worked with secure, high-availability infrastructure',
-      'Collaborated with cross-departmental teams on tech initiatives',
-      'Gained disciplined engineering practices in a high-stakes environment',
-    ],
-  },
-];
+const experience = resumeData.experience;
+const education = resumeData.education;
 
-const education = [
-  {
-    degree: 'MS Software Engineering',
-    institution: 'National University of Sciences and Technology (NUST)',
-    location: 'Islamabad, Pakistan',
-    period: 'Completed',
-    details: 'Focused on software architecture, quality assurance, and research methodologies. Published research papers in software engineering.',
-  },
-  {
-    degree: 'BS Software Engineering',
-    institution: 'University of the Punjab',
-    location: 'Lahore, Pakistan',
-    period: 'Completed',
-    details: 'Core curriculum in computer science, software design, data structures, algorithms, and database systems.',
-  },
-];
-
-const skillCategories = [
-  {
-    title: 'Mechanical & CAD',
-    skills: [
-      { name: 'SolidWorks', icon: FaCogs },
-      { name: 'Aspire', icon: FaCubes },
-      { name: 'DXF / G-Code', icon: FaDraftingCompass },
-      { name: 'CNC Machining', icon: FaIndustry },
-    ],
-  },
-  {
-    title: 'Software (Part-time)',
-    skills: [
-      { name: 'PHP', icon: SiPhp },
-      { name: 'Laravel', icon: SiLaravel },
-      { name: 'React', icon: SiReact },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'Python', icon: SiPython },
-    ],
-  },
-  {
-    title: 'DevOps & Server Mgmt',
-    skills: [
-      { name: 'Ubuntu', icon: SiUbuntu },
-      { name: 'Linux', icon: SiLinux },
-      { name: 'Nginx', icon: SiNginx },
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Git', icon: SiGit },
-      { name: 'AWS', icon: SiAmazonwebservices },
-    ],
-  },
-];
-
-const certifications = [
-  { title: 'Google Scholar - Published Researcher', link: 'https://scholar.google.com/citations?user=MxLBLrYAAAAJ' },
-];
+const skillIconMap = {
+  'SolidWorks': FaCogs, 'Aspire': FaCubes, 'DXF / G-Code': FaDraftingCompass, 'CNC Machining': FaIndustry,
+  'PHP': SiPhp, 'Laravel': SiLaravel, 'React': SiReact, 'JavaScript': SiJavascript, 'Python': SiPython,
+  'Ubuntu': SiUbuntu, 'Linux': SiLinux, 'Nginx': SiNginx, 'Docker': SiDocker, 'Git': SiGit, 'AWS': SiAmazonwebservices,
+};
+const skillCategories = resumeData.skillCategories.map((cat) => ({
+  ...cat,
+  skills: cat.skills.map((name) => ({ name, icon: skillIconMap[name] || null })),
+}));
+const certifications = resumeData.certifications;
 
 const Resume = () => {
   return (

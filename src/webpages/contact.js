@@ -1,69 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiTwitter, FiMapPin, FiMail, FiSend, FiGithub, FiLinkedin, FiMessageSquare, FiInstagram, FiUsers, FiCpu, FiMic, FiHeart } from 'react-icons/fi';
+import { FiTwitter, FiMapPin, FiSend, FiGithub, FiLinkedin, FiMessageSquare, FiInstagram, FiUsers, FiCpu, FiMic, FiHeart } from 'react-icons/fi';
 import { FaTiktok } from 'react-icons/fa';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import contactData from '../data/contact.json';
 
-const contactMethods = [
-  {
-    icon: FiTwitter,
-    title: 'Chat on X',
-    description: 'Primary option to contact me. Inbox me on my X profile.',
-    link: 'https://x.com/adilj13',
-    linkLabel: '@adilj13',
-    color: 'text-sky-500',
-    bgColor: 'bg-sky-50 dark:bg-sky-500/10',
-  },
-  {
-    icon: FiGithub,
-    title: 'GitHub',
-    description: 'Check out my open source projects and contributions.',
-    link: 'https://github.com/adilj13',
-    linkLabel: 'adilj13',
-    color: 'text-gray-700 dark:text-gray-300',
-    bgColor: 'bg-gray-100 dark:bg-gray-800',
-  },
-  {
-    icon: FiLinkedin,
-    title: 'LinkedIn',
-    description: 'Connect with me professionally on LinkedIn.',
-    link: 'https://linkedin.com/in/adilj13',
-    linkLabel: 'adilj13',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50 dark:bg-blue-500/10',
-  },
-  {
-    icon: FiInstagram,
-    title: 'Instagram',
-    description: 'Follow me on Instagram for updates and stories.',
-    link: 'https://instagram.com/adilj13',
-    linkLabel: '@adilj13',
-    color: 'text-pink-500',
-    bgColor: 'bg-pink-50 dark:bg-pink-500/10',
-  },
-  {
-    icon: FaTiktok,
-    title: 'TikTok',
-    description: 'Check out my TikTok for short-form content.',
-    link: 'https://tiktok.com/@adilj13',
-    linkLabel: '@adilj13',
-    color: 'text-gray-900 dark:text-white',
-    bgColor: 'bg-gray-100 dark:bg-gray-800',
-  },
-  {
-    icon: FiMapPin,
-    title: 'Location',
-    description: 'Sufi Engineering, 24-Safdar Town, Lahore Road, Okara.',
-    link: null,
-    linkLabel: null,
-    color: 'text-red-500',
-    bgColor: 'bg-red-50 dark:bg-red-500/10',
-  },
-];
+const contactIconMap = [FiTwitter, FiGithub, FiLinkedin, FiInstagram, FaTiktok, FiMapPin];
+const collabIconMap = [FiUsers, FiCpu, FiMic, FiHeart];
+
+const contactMethods = contactData.contactMethods.map((m, i) => ({ ...m, icon: contactIconMap[i] }));
+const collaborationTypes = contactData.collaborationTypes.map((c, i) => ({ ...c, icon: collabIconMap[i] }));
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -204,36 +154,7 @@ const Contact = () => {
               variants={stagger}
               className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {[
-                {
-                  icon: FiUsers,
-                  title: 'Partnerships',
-                  description:
-                    'Joint ventures, technical partnerships, and long-term collaborations in software engineering or industrial technology.',
-                  color: 'from-red-500 to-rose-600',
-                },
-                {
-                  icon: FiCpu,
-                  title: 'Engineering Discussions',
-                  description:
-                    'Deep dives into software architecture, CNC automation, manufacturing workflows, or blockchain research.',
-                  color: 'from-amber-500 to-orange-600',
-                },
-                {
-                  icon: FiMic,
-                  title: 'Speaking Invitations',
-                  description:
-                    'Conferences, panels, podcasts, or workshops on software engineering, industrial tech, or digital transformation.',
-                  color: 'from-blue-500 to-indigo-600',
-                },
-                {
-                  icon: FiHeart,
-                  title: 'Mentorship',
-                  description:
-                    'Guiding aspiring engineers and developers - career advice, code reviews, and technical mentoring.',
-                  color: 'from-teal-500 to-cyan-600',
-                },
-              ].map(({ icon: Icon, title, description, color }, i) => (
+              {collaborationTypes.map(({ icon: Icon, title, description, color }, i) => (
                 <motion.div
                   key={title}
                   variants={fadeUp}

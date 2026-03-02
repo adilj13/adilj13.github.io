@@ -16,6 +16,7 @@ import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import homeData from '../data/home.json';
 
 /* --- animation helpers --- */
 const fadeUp = {
@@ -27,40 +28,16 @@ const fadeUp = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
-const socialLinks = [
-  { href: 'https://github.com/adilj13', icon: FiGithub, label: 'GitHub' },
-  { href: 'https://x.com/adilj13', icon: FiTwitter, label: 'X' },
-  { href: 'https://linkedin.com/in/adilj13', icon: FiLinkedin, label: 'LinkedIn' },
-  { href: 'https://instagram.com/adilj13', icon: FiInstagram, label: 'Instagram' },
-  { href: 'https://tiktok.com/@adilj13', icon: FaTiktok, label: 'TikTok' },
-  { href: 'https://bsky.app/profile/adil.aziz.pk', icon: SiBluesky, label: 'Bluesky' },
-];
+/* --- icon map (JSON can't store component refs) --- */
+const iconMap = {
+  GitHub: FiGithub, X: FiTwitter, LinkedIn: FiLinkedin,
+  Instagram: FiInstagram, TikTok: FaTiktok, Bluesky: SiBluesky,
+};
+const roleIconMap = [FaCogs, FiTerminal];
 
-/* --- dual roles --- */
-const roles = [
-  {
-    tag: 'Full-time',
-    title: 'Mechanical Engineering Director',
-    company: 'Sufi Engineering',
-    companyUrl: 'https://sufi.engineering',
-    description: 'Leading mechanical engineering operations at a ricetech company - CNC machining, plant design, SolidWorks, DXF/G-Code pipelines, and industrial automation.',
-    highlights: ['CNC & CAD/CAM', 'Plant Layout Design', 'Industrial Automation', 'Team Leadership'],
-    icon: FaCogs,
-    color: 'from-red-500 to-rose-600',
-    tagBg: 'bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 border-red-200/50 dark:border-red-800/50',
-  },
-  {
-    tag: 'Part-time',
-    title: 'Software Engineering Consultant',
-    company: 'Freelance',
-    companyUrl: null,
-    description: 'Building web applications, managing server infrastructure, and providing technical strategy for businesses - PHP, Laravel, React, Ubuntu, Docker.',
-    highlights: ['Web Development', 'Server Management', 'DevOps', 'Open Source'],
-    icon: FiTerminal,
-    color: 'from-blue-500 to-indigo-600',
-    tagBg: 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/50 dark:border-blue-800/50',
-  },
-];
+const socialLinks = homeData.socialLinks.map((s) => ({ ...s, icon: iconMap[s.label] }));
+const roles = homeData.roles.map((r, i) => ({ ...r, icon: roleIconMap[i] }));
+const { featuredClients } = homeData;
 
 /* --- site navigation cards --- */
 const sitePages = [
@@ -70,14 +47,6 @@ const sitePages = [
   { to: '/philosophy', icon: FiCompass, title: 'Philosophy', description: 'Core beliefs, mantras, and working principles.', gradient: 'from-violet-500 to-purple-600' },
   { to: '/uses', icon: FiLayers, title: 'Uses', description: 'Hardware, software, and engineering tools I use.', gradient: 'from-blue-500 to-indigo-600' },
   { to: '/contact', icon: FiMail, title: 'Contact', description: 'Get in touch for consulting or collaboration.', gradient: 'from-pink-500 to-rose-600' },
-];
-
-/* --- featured clients --- */
-const featuredClients = [
-  { name: 'Sufi Engineering', emoji: '🏭', status: 'Full-time' },
-  { name: 'BrandMark', emoji: '🏷️', status: 'Ongoing' },
-  { name: 'Legacy Intl. Consultants', emoji: '🌐', status: 'Ongoing' },
-  { name: 'Pakistan Air Force', emoji: '✈️', status: 'Previously' },
 ];
 
 /* ===== COMPONENT ===== */

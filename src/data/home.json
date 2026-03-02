@@ -1,0 +1,38 @@
+{
+  "socialLinks": [
+    { "href": "https://github.com/adilj13", "label": "GitHub" },
+    { "href": "https://x.com/adilj13", "label": "X" },
+    { "href": "https://linkedin.com/in/adilj13", "label": "LinkedIn" },
+    { "href": "https://instagram.com/adilj13", "label": "Instagram" },
+    { "href": "https://tiktok.com/@adilj13", "label": "TikTok" },
+    { "href": "https://bsky.app/profile/adil.aziz.pk", "label": "Bluesky" }
+  ],
+  "roles": [
+    {
+      "tag": "Full-time",
+      "title": "Mechanical Engineering Director",
+      "company": "Sufi Engineering",
+      "companyUrl": "https://sufi.engineering",
+      "description": "Leading mechanical engineering operations at a ricetech company - CNC machining, plant design, SolidWorks, DXF/G-Code pipelines, and industrial automation.",
+      "highlights": ["CNC & CAD/CAM", "Plant Layout Design", "Industrial Automation", "Team Leadership"],
+      "color": "from-red-500 to-rose-600",
+      "tagBg": "bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 border-red-200/50 dark:border-red-800/50"
+    },
+    {
+      "tag": "Part-time",
+      "title": "Software Engineering Consultant",
+      "company": "Freelance",
+      "companyUrl": null,
+      "description": "Building web applications, managing server infrastructure, and providing technical strategy for businesses - PHP, Laravel, React, Ubuntu, Docker.",
+      "highlights": ["Web Development", "Server Management", "DevOps", "Open Source"],
+      "color": "from-blue-500 to-indigo-600",
+      "tagBg": "bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200/50 dark:border-blue-800/50"
+    }
+  ],
+  "featuredClients": [
+    { "name": "Sufi Engineering", "emoji": "🏭", "status": "Full-time" },
+    { "name": "BrandMark", "emoji": "🏷️", "status": "Ongoing" },
+    { "name": "Legacy Intl. Consultants", "emoji": "🌐", "status": "Ongoing" },
+    { "name": "Pakistan Air Force", "emoji": "✈️", "status": "Previously" }
+  ]
+}

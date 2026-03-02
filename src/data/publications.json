@@ -1,0 +1,48 @@
+{
+  "scholarProfile": {
+    "name": "Adil Aziz",
+    "affiliation": "Sufi Engineering, NUST",
+    "url": "https://scholar.google.com/citations?user=MxLBLrYAAAAJ&hl=en",
+    "stats": {
+      "totalCitations": 6,
+      "hIndex": 1,
+      "i10Index": 0
+    }
+  },
+  "publications": [
+    {
+      "title": "Meta-model for stress testing on blockchain nodes",
+      "authors": ["A Aziz", "MT Riaz", "MS Jahan", "K Ayub"],
+      "venue": "2020 3rd International Conference on Computing, Mathematics and Engineering Technologies (iCoMET)",
+      "year": 2020,
+      "citations": 5,
+      "type": "Conference Paper",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=MxLBLrYAAAAJ&citation_for_view=MxLBLrYAAAAJ:qjMakFHDy7sC",
+      "abstract": "This paper presents a meta-model for stress testing blockchain nodes, providing a systematic approach to evaluate the performance and resilience of blockchain networks under various load conditions.",
+      "keywords": ["Blockchain", "Stress Testing", "Meta-model", "Performance Evaluation", "Distributed Systems"],
+      "color": "from-red-500 to-rose-600"
+    },
+    {
+      "title": "An Approach of Usability Testing for Web User Interface Through Interaction Flow Modeling Language (IFML) Models",
+      "authors": ["MT Riaz", "F Azam", "N Yousaf", "MW Anwar", "A Aziz"],
+      "venue": "International Conference on Emerging Internetworking, Data & Web Technologies (EIDWT)",
+      "year": 2020,
+      "citations": 1,
+      "type": "Conference Paper",
+      "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=MxLBLrYAAAAJ&citation_for_view=MxLBLrYAAAAJ:u5HHmVD_uO8C",
+      "abstract": "This research proposes a novel approach for usability testing of web user interfaces by leveraging Interaction Flow Modeling Language (IFML) models to systematically evaluate and improve user experience.",
+      "keywords": ["Usability Testing", "IFML", "Web UI", "User Experience", "Model-Driven Engineering"],
+      "color": "from-amber-500 to-orange-600"
+    }
+  ],
+  "researchInterests": [
+    "Blockchain Technology",
+    "Software Engineering",
+    "Web Development",
+    "Usability Testing",
+    "Model-Driven Engineering",
+    "Distributed Systems",
+    "Industrial Automation",
+    "Performance Engineering"
+  ]
+}

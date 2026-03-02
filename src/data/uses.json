@@ -1,0 +1,107 @@
+{
+  "categories": [
+    {
+      "title": "Engineering & CAD",
+      "description": "Mechanical engineering tools I use full-time",
+      "items": [
+        {
+          "name": "SolidWorks",
+          "detail": "3D CAD modeling for machine parts, assemblies, and plant layouts. Primary design tool for mechanical engineering work."
+        },
+        {
+          "name": "Vectric Aspire",
+          "detail": "CNC routing and carving software. Used for toolpath generation, 3D relief modeling, and CNC job preparation."
+        },
+        {
+          "name": "DXF / G-Code",
+          "detail": "Design exchange format files and G-Code programming for CNC machines. Daily workflow for machining operations."
+        },
+        {
+          "name": "CNC Machines",
+          "detail": "Operating and programming CNC routers, lathes, and mills for precision manufacturing at the rice processing plant."
+        }
+      ]
+    },
+    {
+      "title": "Workstation",
+      "description": "My daily hardware setup",
+      "items": [
+        {
+          "name": "HP Elitebook 840 G5",
+          "detail": "Intel i5 8th Gen, 16GB RAM, 256GB SSD - Reliable workhorse for development and multitasking."
+        },
+        {
+          "name": "ASUS 24\" Monitor × 2",
+          "detail": "Dual monitor setup for productivity. Code on one screen, browser/terminal on the other."
+        },
+        {
+          "name": "Mechanical Keyboard",
+          "detail": "Because the click-clack helps you think. Cherry MX switches."
+        },
+        {
+          "name": "Logitech Mouse",
+          "detail": "Wireless, ergonomic, gets the job done without wrist pain."
+        }
+      ]
+    },
+    {
+      "title": "Editor & Terminal",
+      "items": [
+        {
+          "name": "VS Code",
+          "detail": "Primary editor. Extensions: GitHub Copilot, ESLint, Prettier, Tailwind IntelliSense, GitLens."
+        },
+        {
+          "name": "Terminal - Zsh + Oh My Zsh",
+          "detail": "Custom prompt with Powerlevel10k theme. Aliases and functions for faster workflow."
+        },
+        {
+          "name": "Ubuntu / WSL",
+          "detail": "Linux-first development environment. Ubuntu as primary OS or via WSL on Windows."
+        }
+      ]
+    },
+    {
+      "title": "Development Tools",
+      "items": [
+        {
+          "name": "Docker",
+          "detail": "Containerized development and deployment. Docker Compose for multi-service setups."
+        },
+        {
+          "name": "GitHub",
+          "detail": "Version control, CI/CD with GitHub Actions, project management with Issues and Projects."
+        },
+        {
+          "name": "Postman",
+          "detail": "API testing and documentation. Collections shared across the team."
+        },
+        {
+          "name": "Chrome DevTools",
+          "detail": "Network inspection, performance profiling, Lighthouse audits."
+        }
+      ]
+    },
+    {
+      "title": "Productivity",
+      "items": [
+        {
+          "name": "Notion",
+          "detail": "Project planning, documentation, personal knowledge base. The second brain."
+        },
+        {
+          "name": "Figma",
+          "detail": "UI/UX prototyping and design collaboration when needed."
+        },
+        {
+          "name": "Slack",
+          "detail": "Team communication. Channels organized by project and topic."
+        },
+        {
+          "name": "Spotify",
+          "detail": "Lo-fi beats, deep focus playlists, and the occasional nasheeds for coding sessions."
+        }
+      ]
+    }
+  ]
+}

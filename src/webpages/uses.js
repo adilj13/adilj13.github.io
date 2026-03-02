@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiMonitor, FiCode, FiTerminal, FiTool, FiHeadphones, FiSmartphone, FiSettings } from 'react-icons/fi';
+import { FiMonitor, FiCode, FiTerminal, FiTool, FiSmartphone, FiSettings } from 'react-icons/fi';
 import { SiVscodium, SiUbuntu, SiSpotify, SiGooglechrome, SiFigma, SiNotion, SiSlack, SiGithub, SiDocker, SiPostman } from 'react-icons/si';
 import { FaCogs, FaDraftingCompass, FaCubes, FaIndustry } from 'react-icons/fa';
 import Navbar from './components/navbar';
@@ -8,6 +8,7 @@ import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import usesData from '../data/uses.json';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,131 +23,21 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const categories = [
-  {
-    title: 'Engineering & CAD',
-    icon: FiSettings,
-    description: 'Mechanical engineering tools I use full-time',
-    items: [
-      {
-        name: 'SolidWorks',
-        detail: '3D CAD modeling for machine parts, assemblies, and plant layouts. Primary design tool for mechanical engineering work.',
-        icon: FaCogs,
-      },
-      {
-        name: 'Vectric Aspire',
-        detail: 'CNC routing and carving software. Used for toolpath generation, 3D relief modeling, and CNC job preparation.',
-        icon: FaCubes,
-      },
-      {
-        name: 'DXF / G-Code',
-        detail: 'Design exchange format files and G-Code programming for CNC machines. Daily workflow for machining operations.',
-        icon: FaDraftingCompass,
-      },
-      {
-        name: 'CNC Machines',
-        detail: 'Operating and programming CNC routers, lathes, and mills for precision manufacturing at the rice processing plant.',
-        icon: FaIndustry,
-      },
-    ],
-  },
-  {
-    title: 'Workstation',
-    icon: FiMonitor,
-    description: 'My daily hardware setup',
-    items: [
-      {
-        name: 'HP Elitebook 840 G5',
-        detail: 'Intel i5 8th Gen, 16GB RAM, 256GB SSD - Reliable workhorse for development and multitasking.',
-      },
-      {
-        name: 'ASUS 24" Monitor × 2',
-        detail: 'Dual monitor setup for productivity. Code on one screen, browser/terminal on the other.',
-      },
-      {
-        name: 'Mechanical Keyboard',
-        detail: 'Because the click-clack helps you think. Cherry MX switches.',
-      },
-      {
-        name: 'Logitech Mouse',
-        detail: 'Wireless, ergonomic, gets the job done without wrist pain.',
-      },
-    ],
-  },
-  {
-    title: 'Editor & Terminal',
-    icon: FiCode,
-    items: [
-      {
-        name: 'VS Code',
-        detail: 'Primary editor. Extensions: GitHub Copilot, ESLint, Prettier, Tailwind IntelliSense, GitLens.',
-        icon: SiVscodium,
-      },
-      {
-        name: 'Terminal - Zsh + Oh My Zsh',
-        detail: 'Custom prompt with Powerlevel10k theme. Aliases and functions for faster workflow.',
-        icon: FiTerminal,
-      },
-      {
-        name: 'Ubuntu / WSL',
-        detail: 'Linux-first development environment. Ubuntu as primary OS or via WSL on Windows.',
-        icon: SiUbuntu,
-      },
-    ],
-  },
-  {
-    title: 'Development Tools',
-    icon: FiTool,
-    items: [
-      {
-        name: 'Docker',
-        detail: 'Containerized development and deployment. Docker Compose for multi-service setups.',
-        icon: SiDocker,
-      },
-      {
-        name: 'GitHub',
-        detail: 'Version control, CI/CD with GitHub Actions, project management with Issues and Projects.',
-        icon: SiGithub,
-      },
-      {
-        name: 'Postman',
-        detail: 'API testing and documentation. Collections shared across the team.',
-        icon: SiPostman,
-      },
-      {
-        name: 'Chrome DevTools',
-        detail: 'Network inspection, performance profiling, Lighthouse audits.',
-        icon: SiGooglechrome,
-      },
-    ],
-  },
-  {
-    title: 'Productivity',
-    icon: FiSmartphone,
-    items: [
-      {
-        name: 'Notion',
-        detail: 'Project planning, documentation, personal knowledge base. The second brain.',
-        icon: SiNotion,
-      },
-      {
-        name: 'Figma',
-        detail: 'UI/UX prototyping and design collaboration when needed.',
-        icon: SiFigma,
-      },
-      {
-        name: 'Slack',
-        detail: 'Team communication. Channels organized by project and topic.',
-        icon: SiSlack,
-      },
-      {
-        name: 'Spotify',
-        detail: 'Lo-fi beats, deep focus playlists, and the occasional nasheeds for coding sessions.',
-        icon: SiSpotify,
-      },
-    ],
-  },
-];
+/* --- Map icons to items from JSON --- */
+const categoryIcons = [FiSettings, FiMonitor, FiCode, FiTool, FiSmartphone];
+const itemIconMap = {
+  'SolidWorks': FaCogs, 'Vectric Aspire': FaCubes, 'DXF / G-Code': FaDraftingCompass,
+  'CNC Machines': FaIndustry, 'VS Code': SiVscodium, 'Terminal - Zsh + Oh My Zsh': FiTerminal,
+  'Ubuntu / WSL': SiUbuntu, 'Docker': SiDocker, 'GitHub': SiGithub, 'Postman': SiPostman,
+  'Chrome DevTools': SiGooglechrome, 'Notion': SiNotion, 'Figma': SiFigma, 'Slack': SiSlack,
+  'Spotify': SiSpotify,
+};
+
+const categories = usesData.categories.map((cat, i) => ({
+  ...cat,
+  icon: categoryIcons[i],
+  items: cat.items.map((item) => ({ ...item, icon: itemIconMap[item.name] || null })),
+}));
 
 const Uses = () => {
   return (

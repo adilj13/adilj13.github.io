@@ -11,6 +11,7 @@ import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import philData from '../data/philosophy.json';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -26,95 +27,15 @@ const stagger = {
 };
 
 // ──────────────────────────────────────────
-//  CORE BELIEFS
+//  DATA FROM JSON (icons mapped here)
 // ──────────────────────────────────────────
 
-const coreBeliefs = [
-  {
-    icon: FiTarget,
-    title: 'Build What Matters',
-    body: "I don't chase trends - I chase impact. Every project, every system, every design should solve a real problem for real people. If it doesn't make someone's life easier or a process more efficient, it's not worth building.",
-    color: 'from-red-500 to-rose-600',
-  },
-  {
-    icon: FiZap,
-    title: 'Industry Meets Code',
-    body: 'The factory floor and the terminal are not different worlds. The best solutions come when you bring engineering discipline to software and creative thinking to manufacturing. I live at that intersection.',
-    color: 'from-amber-500 to-orange-600',
-  },
-  {
-    icon: FiShield,
-    title: 'Own Your Work',
-    body: 'Ship it, stand behind it, fix it when it breaks. I believe in full ownership - from the first line of code to production deployment, from the first DXF sketch to the final CNC cut. No finger-pointing, just accountability.',
-    color: 'from-blue-500 to-indigo-600',
-  },
-  {
-    icon: FiHeart,
-    title: 'People Over Processes',
-    body: "Systems exist to serve people, not the other way around. Whether I'm managing a factory team or building a web application, the humans using it always come first. Good leadership is just good empathy applied consistently.",
-    color: 'from-teal-500 to-cyan-600',
-  },
-];
+const beliefIcons = [FiTarget, FiZap, FiShield, FiHeart];
+const principleIcons = [FiCompass, FiTrendingUp, FiUsers, FiStar, FiBookOpen, FiSunrise];
 
-// ──────────────────────────────────────────
-//  PRINCIPLES
-// ──────────────────────────────────────────
-
-const principles = [
-  {
-    icon: FiCompass,
-    title: 'Simplicity Over Cleverness',
-    description: 'The simplest solution that works is almost always the right one. Complexity is easy - clarity is hard.',
-  },
-  {
-    icon: FiTrendingUp,
-    title: 'Compound Improvement',
-    description: "Small, consistent improvements compound into massive results. I'd rather improve 1% every day than chase overnight transformation.",
-  },
-  {
-    icon: FiUsers,
-    title: 'Teach What You Know',
-    description: "Knowledge grows when shared. Mentoring junior engineers and open-sourcing work isn't charity - it's how industries evolve.",
-  },
-  {
-    icon: FiStar,
-    title: 'Quality Is Non-Negotiable',
-    description: "Whether it's a weld on a steel frame or an API endpoint - if it's worth doing, it's worth doing right. Cutting corners costs more later.",
-  },
-  {
-    icon: FiBookOpen,
-    title: 'Stay a Student',
-    description: 'The moment you think you know enough is the moment you become obsolete. I read, experiment, and ask questions every single day.',
-  },
-  {
-    icon: FiSunrise,
-    title: 'Long-Term Thinking',
-    description: 'I optimise for decades, not quarters. Every decision - technical, financial, personal - gets filtered through: "Will this matter in 10 years?"',
-  },
-];
-
-// ──────────────────────────────────────────
-//  QUOTES / MANTRAS
-// ──────────────────────────────────────────
-
-const mantras = [
-  {
-    quote: 'The best engineers are the ones who understand why, not just how.',
-    context: 'On curiosity-driven work',
-  },
-  {
-    quote: "You don't need permission to solve a problem you see. Just start.",
-    context: 'On initiative',
-  },
-  {
-    quote: 'Hardware teaches you patience. Software teaches you speed. Doing both teaches you balance.',
-    context: 'On being a Techno-Industrialist',
-  },
-  {
-    quote: "If your work doesn't survive without you, you haven't built a system - you've built a dependency.",
-    context: 'On building resilient teams and systems',
-  },
-];
+const coreBeliefs = philData.coreBeliefs.map((b, i) => ({ ...b, icon: beliefIcons[i] }));
+const principles = philData.principles.map((p, i) => ({ ...p, icon: principleIcons[i] }));
+const mantras = philData.mantras;
 
 // ──────────────────────────────────────────
 //  COMPONENT

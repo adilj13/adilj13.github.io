@@ -1,0 +1,79 @@
+{
+  "experience": [
+    {
+      "role": "Director - Mechanical Engineering Management",
+      "company": "Sufi Engineering",
+      "location": "Okara, Pakistan",
+      "period": "2020 - Present (Full-time)",
+      "description": "Leading mechanical engineering operations at a ricetech company focused on innovation in rice processing technology.",
+      "highlights": [
+        "Managing CNC machining operations with DXF, G-Code, SolidWorks, and Aspire",
+        "Designing and optimizing rice processing plant layouts and machinery components",
+        "Leading cross-functional teams of mechanical engineers and factory floor technicians",
+        "Driving industrial automation and modernization of legacy manufacturing processes"
+      ]
+    },
+    {
+      "role": "Software Engineering Consultant",
+      "company": "Freelance / Part-time",
+      "location": "Remote",
+      "period": "Part-time",
+      "description": "Part-time software development and consulting for web applications, server infrastructure, and technical strategy.",
+      "highlights": [
+        "Building and maintaining web applications with PHP, Laravel, and React",
+        "Server management, deployment automation, and infrastructure on Ubuntu/Linux",
+        "Technical consulting for businesses on software architecture and tooling",
+        "Contributing to open source projects and community"
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Pakistan Air Force - Air HQ",
+      "location": "Islamabad, Pakistan",
+      "period": "Previously",
+      "description": "Contributed to technology and software systems at Air Headquarters.",
+      "highlights": [
+        "Developed and maintained mission-critical software systems",
+        "Worked with secure, high-availability infrastructure",
+        "Collaborated with cross-departmental teams on tech initiatives",
+        "Gained disciplined engineering practices in a high-stakes environment"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MS Software Engineering",
+      "institution": "National University of Sciences and Technology (NUST)",
+      "location": "Islamabad, Pakistan",
+      "period": "Completed",
+      "details": "Focused on software architecture, quality assurance, and research methodologies. Published research papers in software engineering."
+    },
+    {
+      "degree": "BS Software Engineering",
+      "institution": "University of the Punjab",
+      "location": "Lahore, Pakistan",
+      "period": "Completed",
+      "details": "Core curriculum in computer science, software design, data structures, algorithms, and database systems."
+    }
+  ],
+  "skillCategories": [
+    {
+      "title": "Mechanical & CAD",
+      "skills": ["SolidWorks", "Aspire", "DXF / G-Code", "CNC Machining"]
+    },
+    {
+      "title": "Software (Part-time)",
+      "skills": ["PHP", "Laravel", "React", "JavaScript", "Python"]
+    },
+    {
+      "title": "DevOps & Server Mgmt",
+      "skills": ["Ubuntu", "Linux", "Nginx", "Docker", "Git", "AWS"]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Google Scholar - Published Researcher",
+      "link": "https://scholar.google.com/citations?user=MxLBLrYAAAAJ"
+    }
+  ]
+}

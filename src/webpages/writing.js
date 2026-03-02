@@ -13,6 +13,7 @@ import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import pubData from '../data/publications.json';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -38,38 +39,11 @@ const TABS = [
 ];
 
 // ──────────────────────────────────────────
-//  PUBLICATIONS DATA (static)
+//  PUBLICATIONS DATA (from JSON)
 // ──────────────────────────────────────────
 
-const SCHOLAR_URL = 'https://scholar.google.com/citations?user=MxLBLrYAAAAJ&hl=en';
-
-const publications = [
-  {
-    title: 'Meta-model for stress testing on blockchain nodes',
-    authors: ['A Aziz', 'MT Riaz', 'MS Jahan', 'K Ayub'],
-    venue: '2020 3rd International Conference on Computing, Mathematics and Engineering Technologies (iCoMET)',
-    year: 2020,
-    citations: 5,
-    type: 'Conference Paper',
-    scholarUrl:
-      'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=MxLBLrYAAAAJ&citation_for_view=MxLBLrYAAAAJ:qjMakFHDy7sC',
-    keywords: ['Blockchain', 'Stress Testing', 'Meta-model', 'Performance Evaluation', 'Distributed Systems'],
-    color: 'from-red-500 to-rose-600',
-  },
-  {
-    title:
-      'An Approach of Usability Testing for Web User Interface Through Interaction Flow Modeling Language (IFML) Models',
-    authors: ['MT Riaz', 'F Azam', 'N Yousaf', 'MW Anwar', 'A Aziz'],
-    venue: 'International Conference on Emerging Internetworking, Data & Web Technologies (EIDWT)',
-    year: 2020,
-    citations: 1,
-    type: 'Conference Paper',
-    scholarUrl:
-      'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=MxLBLrYAAAAJ&citation_for_view=MxLBLrYAAAAJ:u5HHmVD_uO8C',
-    keywords: ['Usability Testing', 'IFML', 'Web UI', 'User Experience', 'Model-Driven Engineering'],
-    color: 'from-amber-500 to-orange-600',
-  },
-];
+const SCHOLAR_URL = pubData.scholarProfile.url;
+const publications = pubData.publications;
 
 // ──────────────────────────────────────────
 //  SKELETON LOADERS

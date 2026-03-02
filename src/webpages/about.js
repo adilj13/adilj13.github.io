@@ -7,6 +7,7 @@ import Footer from './components/footer';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import SEO from '../components/SEO';
+import aboutData from '../data/about.json';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,48 +21,12 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const stats = [
-  { label: 'Years Experience', value: '5+', icon: FiBriefcase },
-  { label: 'Projects Built', value: '20+', icon: FiCode },
-  { label: 'Publications', value: '3', icon: FiBookOpen },
-  { label: 'Cups of Coffee', value: '∞', icon: FiCoffee },
-];
+const statIcons = [FiBriefcase, FiCode, FiBookOpen, FiCoffee];
+const valueIcons = [FiSettings, FiBookOpen, FiGlobe, FiAward];
 
-const values = [
-  {
-    title: 'Industrial Innovation',
-    description: 'Bridging the gap between traditional industry and modern technology. Applying engineering precision to manufacturing and rice processing.',
-    icon: FiSettings,
-  },
-  {
-    title: 'Continuous Learning',
-    description: 'From SolidWorks to server management - I stay sharp by constantly expanding my toolkit across both mechanical and software domains.',
-    icon: FiBookOpen,
-  },
-  {
-    title: 'Impact-Driven Work',
-    description: 'Every design and every line of code should serve a purpose. I focus on solutions that solve real problems in the real world.',
-    icon: FiGlobe,
-  },
-  {
-    title: 'Leadership',
-    description: 'Leading cross-functional teams at Sufi Engineering - from factory floor technicians to software developers. I value mentorship, clear communication, and ownership.',
-    icon: FiAward,
-  },
-];
-
-const interests = [
-  'Mechanical Engineering',
-  'CNC & CAD/CAM',
-  'SolidWorks & Aspire',
-  'DXF & G-Code',
-  'Industrial Automation',
-  'Rice Processing Technology',
-  'Software Consulting',
-  'Server Management',
-  'Open Source',
-  'PHP & Laravel',
-];
+const stats = aboutData.stats.map((s, i) => ({ ...s, icon: statIcons[i] }));
+const values = aboutData.values.map((v, i) => ({ ...v, icon: valueIcons[i] }));
+const interests = aboutData.interests;
 
 const About = () => {
   return (
